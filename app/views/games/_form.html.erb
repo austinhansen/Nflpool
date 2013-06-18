@@ -1,4 +1,4 @@
-<%= form_for(@game) do |f| %>
+<%= simple_form_for(@game, html: {class: "form-horizontal"}) do |f| %>
   <% if @game.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@game.errors.count, "error") %> prohibited this game from being saved:</h2>
@@ -11,19 +11,11 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :date %><br />
-    <%= f.date_select :date %>
+  <%= f.input :team_one_id, collection: Team.all, label_method: :name %>
+  <%= f.input :team_two_id, collection: Team.all, label_method: :name %>
+  <%= f.input :date %>
+  <div class="form-actions">
+    <%= f.button :submit, class: "btn btn-success" %>
   </div>
-  <div class="field">
-    <%= f.label :team_one_id %><br />
-    <%= f.number_field :team_one_id %>
-  </div>
-  <div class="field">
-    <%= f.label :team_two_id %><br />
-    <%= f.number_field :team_two_id %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+
 <% end %>

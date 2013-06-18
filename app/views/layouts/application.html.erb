@@ -30,13 +30,15 @@
 		<div class="row-fluid">
 			<div class="span1">
 			</div>
-			<div class="span8">
+			<div class="span10">
+				<% flash.each do |type, message| %>
+					<div class="alert <%= flash_class type %>">
+						<button class="close" data-dismiss="alert">x</button>
+							<%= message %>
+					</div>
+				<% end %>
 				<%= yield %>
 			</div> 
-			<div>
-				<p class="notice"><%= notice %></p>
-				<p class="alert"><%= alert %></p>
-			</div>
 		</div>
 	</div>	
 </body>

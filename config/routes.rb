@@ -1,7 +1,5 @@
 Nflpool::Application.routes.draw do
 
-  resources :games
-
 
   devise_for :users
 
@@ -11,7 +9,7 @@ Nflpool::Application.routes.draw do
     get 'logout', to: 'devise/sessions#destroy', as: :logout
   end
 
-  root :to => 'users#index'
+  root to: 'games#index'
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

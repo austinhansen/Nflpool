@@ -8,6 +8,7 @@ gem 'rails', '3.2.13'
 
 
 gem 'devise'
+gem 'simple_form'
 
 
 group :development, :test do

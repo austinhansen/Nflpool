@@ -7,9 +7,19 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<%= yield %>
-<p class="notice"><%= notice %></p>
-<p class="alert"><%= alert %></p>
+	<div class="hero-unit">
+	  <h1>NFL Pool</h1>
+	  <p>This is a witty slogan</p>	
+	</div>
+	<div class="row-fluid">
+		<div class="span1">
+		</div>
+		<div class="span8">
+			<%= yield %>
+		</div> 
+		<div>
+			<p class="notice"><%= notice %></p>
+			<p class="alert"><%= alert %></p>
+		</div>
 </body>
 </html>

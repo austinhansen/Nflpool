@@ -7,19 +7,37 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-	<div class="hero-unit">
-	  <h1>NFL Pool</h1>
-	  <p>This is a witty slogan</p>	
-	</div>
-	<div class="row-fluid">
-		<div class="span1">
+	<div class="container-fluid">
+		<header class="hero-unit">
+		  <h1><a href="#">NFL Pool</a></h1>
+		  <p>This is a witty slogan</p>	
+		</header>
+		<div class="navbar navbar-fixed-top">
+			<div class="navbar-inner">
+				<div class="container">
+					<ul class="nav pull-right">
+						<% if user_signed_in? %>
+							<li><%= link_to current_user.first_name, edit_user_registration_path %></li>
+							<li><%= link_to "Log out", logout_path %></li>
+						<% else %>
+							<li><%= link_to "Register", register_path %></li>
+							<li><%= link_to "Log In", login_path %></li>
+						<% end %>
+					</ul>
+				</div>
+			</div>
 		</div>
-		<div class="span8">
-			<%= yield %>
-		</div> 
-		<div>
-			<p class="notice"><%= notice %></p>
-			<p class="alert"><%= alert %></p>
+		<div class="row-fluid">
+			<div class="span1">
+			</div>
+			<div class="span8">
+				<%= yield %>
+			</div> 
+			<div>
+				<p class="notice"><%= notice %></p>
+				<p class="alert"><%= alert %></p>
+			</div>
 		</div>
+	</div>	
 </body>
 </html>

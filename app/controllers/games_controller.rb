@@ -3,7 +3,7 @@ class GamesController < ApplicationController
   # GET /games
   # GET /games.json
   def index
-    @games = Game.all
+    @games = Game.all(:order => 'date')
 
     respond_to do |format|
       format.html # index.html.erb

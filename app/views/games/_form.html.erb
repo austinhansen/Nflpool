@@ -1,7 +1,7 @@
 <%= simple_form_for(@game, html: {class: "form-horizontal"}) do |f| %>
   <%= f.input :team_one_id, label: 'Home Team', :include_blank => false,collection: Team.all, label_method: :name %>
   <%= f.input :team_two_id, label: 'Away Team', :include_blank => false,collection: Team.all, label_method: :name %>
-  <%= f.input :winning_team, label: 'Winner', collection: Team.all, label_method: :name %>
+  <%= f.input :winning_team_id, label: 'Winner', collection: Team.all, label_method: :name %>
   <%= f.input :date %>
   <div class="form-actions">
     <%= f.button :submit, class: "btn btn-success" %>

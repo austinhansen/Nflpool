@@ -15,12 +15,20 @@
     <td><%= game.date.to_formatted_s(:long) %></td>
     <td><%= game.team_one.name %></td>
     <td><%= game.team_two.name %></td>
-    <td><%= link_to 'Edit', edit_game_path(game) %></td>
-    <td><%= link_to 'Delete', game, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    
+    <% if current_user.has_role?(:admin) %>
+
+      <td><%= link_to 'Edit', edit_game_path(game) %></td>
+      <td><%= link_to 'Delete', game, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <% else %>
+    <% end %>
   </tr>
 <% end %>
 </table>
 
 <br />
-<%= link_to 'New Game', new_game_path, class: "btn btn-success" %>
+<% if current_user.has_role?(:admin) %>
+  <%= link_to 'New Game', new_game_path, class: "btn btn-success" %>
+<% else %>
+<% end %>  
 

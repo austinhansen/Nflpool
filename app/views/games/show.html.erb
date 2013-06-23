@@ -1,6 +1,6 @@
 <p>
   <b>Date:</b>
-  <%= @game.date %>
+  <%= @game.date.to_formatted_s(:long) %>
 </p>
 
 <p>
@@ -12,12 +12,14 @@
   <b>Away Team:</b>
   <%= @game.team_two.name %>
 </p>
-
-<p>
-  <b>Winning Team:</b>
-  <%= @game.winning_team.name %>
-</p>
-
+<% if @game.winning_team_id == nil %>
+	
+<% else %>
+	<p>
+	  <b>Winning Team:</b>
+	  <%= @game.winning_team.name %>
+	</p>
+<% end %>
 
 <%= link_to 'Edit', edit_game_path(@game) %> |
 <%= link_to 'Back', games_path %>

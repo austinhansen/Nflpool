@@ -5,9 +5,12 @@
 
   <div><%= f.label :email %><br />
   <%= f.email_field :email, :autofocus => true %></div>
-
-  <div><%= f.label :points %><br />
-  <%= f.text_field :points, :autofocus => true %></div>
+  
+  <% if current_user.has_role?(:admin) %>
+    <div><%= f.label :points %><br />
+    <%= f.text_field :points, :autofocus => true %></div>
+  <% else %>
+  <% end %>
 
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
     <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>

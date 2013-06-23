@@ -1,4 +1,6 @@
 class User < ActiveRecord::Base
+  resourcify
+  rolify
   # Include default devise modules. Others available are:
   # :token_authenticatable, :confirmable,
   # :lockable, :timeoutable and :omniauthable
@@ -9,4 +11,6 @@ class User < ActiveRecord::Base
   attr_accessible :email, :password, :password_confirmation, :remember_me, 
   				  :first_name, :last_name, :profile_name, :points
   # attr_accessible :title, :body
+
+
 end

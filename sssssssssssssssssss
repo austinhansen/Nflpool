@@ -1,0 +1,120 @@
+[33mcommit 5151e67112d054e5da107b53ef2f7746cb72baeb[m
+Author: Austin Hansen <austinthansen@gmail.com>
+Date:   Sun Jun 23 10:40:36 2013 -0600
+
+    Sequestered some content for admins only
+
+[33mcommit ecbb147aeea1d674acfdb24bf3c7c3c94f7878bb[m
+Author: Austin Hansen <austinthansen@gmail.com>
+Date:   Sun Jun 23 01:49:56 2013 -0600
+
+    Added rolify gem
+
+[33mcommit f6af08622a2698d0b45eb9247f53e015a18255d4[m
+Author: Austin Hansen <austinthansen@gmail.com>
+Date:   Sun Jun 23 01:49:17 2013 -0600
+
+    Added Cancan gem
+
+[33mcommit 210da87476811d22e1d012b7c0b865e9bb610807[m
+Author: Austin Hansen <austinthansen@gmail.com>
+Date:   Sat Jun 22 23:10:45 2013 -0600
+
+    Fixed the database error by creating another migration to remove the winning_team column from game model
+
+[33mcommit 38b14fe15c44931b4f779eb71222e74170fb999f[m
+Author: Austin Hansen <austinthansen@gmail.com>
+Date:   Sat Jun 22 17:08:12 2013 -0600
+
+    Removed winning_team column from games, created new migration to add winning_team_id to games. Experiencing mass-assign protection error on game creation.
+
+[33mcommit 334b67a0bb50ddf4eff9d41573147c1577ec389e[m
+Author: Austin Hansen <austinthansen@gmail.com>
+Date:   Sat Jun 22 16:15:25 2013 -0600
+
+    Integrated points total into nav bar. Added functionality for adding points in user edit view
+
+[33mcommit c5041ce2aeb31424b014b569ec19af1a2b48268a[m
+Author: Austin Hansen <austinthansen@gmail.com>
+Date:   Fri Jun 21 05:20:42 2013 -0600
+
+    Created migrations for adding winning_team to game and points to user
+
+[33mcommit 547413b39e2c243db4f347730c8c8d3cfc28ceb6[m
+Author: Austin Hansen <austinthansen@gmail.com>
+Date:   Wed Jun 19 22:55:01 2013 -0600
+
+    Added dividers to columns in games index. Changed formatting on dates
+
+[33mcommit c94b92c9f49ec3c4aa1e775c1d231e681a7cde8a[m
+Author: Austin Hansen <austinthansen@gmail.com>
+Date:   Wed Jun 19 19:51:34 2013 -0600
+
+    Changed padding on table CSS
+
+[33mcommit 48b25655526e59e6d97cbe36355a978697a7f089[m
+Merge: 5756f5a 485a674
+Author: Austin Hansen <austinthansen@gmail.com>
+Date:   Wed Jun 19 19:19:10 2013 -0600
+
+    Merge branch 'master' of https://github.com/austinhansen/Nflpool
+
+[33mcommit 5756f5a6476721b5a7c40dd672298bf937d996ea[m
+Author: Austin Hansen <austinthansen@gmail.com>
+Date:   Wed Jun 19 19:11:01 2013 -0600
+
+    Deleted public/index.html
+
+[33mcommit 017149d2f8d43f014815c7aa795f316f2e555848[m
+Author: Austin Hansen <austinthansen@gmail.com>
+Date:   Wed Jun 19 18:55:30 2013 -0600
+
+    Added public/index.html to troubleshoot whitescreen issue
+
+[33mcommit 485a674987b6e48368e5567e6ef724c52066991c[m
+Author: Austin Hansen <austinthansen@gmail.com>
+Date:   Tue Jun 18 21:02:45 2013 -0600
+
+    Added padding to games index, sorted games by date
+
+[33mcommit aea7f87323724908f42e7edc5e4287d50bdaef71[m
+Author: Austin Hansen <austinthansen@gmail.com>
+Date:   Tue Jun 18 20:30:43 2013 -0600
+
+    Removed old form code from _form.html.erb
+
+[33mcommit 8d5a61024e845d7853d0e8508120cbd39c3d390c[m
+Author: Austin Hansen <austinthansen@gmail.com>
+Date:   Tue Jun 18 17:18:01 2013 -0600
+
+    Added some CSS to the games/index.html.erb
+
+[33mcommit 30a0a34b0c30971026a7fe4852bb512d68fb0aa4[m
+Author: Austin Hansen <austinthansen@gmail.com>
+Date:   Tue Jun 18 17:11:47 2013 -0600
+
+    Configured simple_form, added some CSS to the New Game view. Added notification helper in application_helper.rb. Added notification flashes to application.html.erb
+
+[33mcommit 267d8f0056a5b257299268a6fe1803f4fca5f8b9[m
+Author: Austin Hansen <austinthansen@gmail.com>
+Date:   Tue Jun 18 16:22:35 2013 -0600
+
+    Added simple_form. Created team model. Added relationship between team and game models.
+
+[33mcommit 2991792891278f6232302fa0dc7e0ceb0eeb8336[m
+Author: Austin Hansen <austinthansen@gmail.com>
+Date:   Tue Jun 18 16:13:48 2013 -0600
+
+    Added migrations to the database
+
+[33mcommit ba1c76edd9248c15e6aa71645bd61b51440766f5[m
+Author: Austin Hansen <austinthansen@gmail.com>
+Date:   Tue Jun 18 15:10:32 2013 -0600
+
+    Updated routing, deleted /public/index.html
+
+[33mcommit ead245b774f35bc5439b6745b672e6c781689f1c[m
+Author: Austin Hansen <austinthansen@gmail.com>
+Date:   Tue Jun 18 14:39:12 2013 -0600
+
+    Added some navigation and a navbar.

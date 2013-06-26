@@ -1,9 +1,12 @@
 class GamesController < ApplicationController
-  before_filter :authenticate_user!
+  before_filter :authenticate_user!, except: :sign_in
+  before_filter :ensure_admin!, except: :index
   # GET /games
   # GET /games.json
+
+
   def index
-    @games = Game.all(:order => 'date')
+    @games = Game.order(:date)
 
     respond_to do |format|
       format.html # index.html.erb

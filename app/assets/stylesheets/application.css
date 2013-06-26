@@ -8,6 +8,53 @@
  * You're free to add application-wide styles to this file and they'll appear at the top of the
  * compiled file, but it's generally better to create a new file per style scope.
  *
- *= require_self
  *= require_tree .
+ *= require_self 
  */
+
+
+
+.main-hero.hero-unit {
+text-align: center;
+vertical-align: center;
+background-color: rgba(44, 62, 80,0.3);
+color:#34495e;
+box-shadow: 0 0 40px rgba(0,0,0,0.1) inset;
+
+
+}
+
+.hero-unit a, .hero-unit {
+color: black;
+vertical-align: center;
+
+}
+
+.main-hero a {
+color:#34495e;
+
+}
+
+.row {
+background: white;
+
+}
+
+.navbar-inner.main-inner {
+	background: none;
+	border: none;
+	box-shadow: none;
+}
+
+.navbar .nav > li > a { 
+	color: black;
+	text-shadow: none;
+}
+.main-inner a:hover { 
+	color: #bdc3c7; 
+}
+
+
+td {
+	: strong;
+}

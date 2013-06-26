@@ -7,17 +7,8 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-	<header class="hero-unit">
-		<div class="container">
-	  		<h1><a href="/">NFL Pool</a></h1>
-	  		<p>This is a witty slogan</p>	
-		</div>
-	</header>
-	
-	<div class="container">
-
-		<div class="navbar navbar-fixed-top">
-			<div class="navbar-inner">
+		<div class="navbar">
+			<div class="navbar-inner main-inner">
 				<div class="container">
 					<ul class="nav pull-right">
 						<% if user_signed_in? %>
@@ -37,6 +28,18 @@
 				</div>
 			</div>
 		</div>
+
+		
+	<header class="hero-unit main-hero">
+		<div class="container">
+	  		<h1><a href="/">NFL Pool</a></h1>
+	  		<p>The best way to run your football pool</p>	
+		</div>
+	</header>
+	
+	<div class="container">
+
+
 		<div class="row">
 			<div class="span1">
 			</div>

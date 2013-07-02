@@ -1,13 +1,11 @@
-<%= simple_form_for(@pick) do |f| %>
+<%= simple_form_for(@pick, html: {class: "form-horizontal"}) do |f| %>
   <%= f.error_notification %>
 
   <div class="form-inputs">
-    <%= f.input :pick_team_id %>
-    <%= f.input :date %>
-    <%= f.input :user_id %>
+    <%= f.input :pick_team, label: 'Winning Team', :include_blank => false, collection: Team.all, label_method: :name %>    
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit %>
+    <%= f.button :submit, class: "btn btn-success" %>
   </div>
 <% end %>

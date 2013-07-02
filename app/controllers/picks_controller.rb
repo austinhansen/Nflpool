@@ -1,5 +1,6 @@
 class PicksController < ApplicationController
   before_filter :authenticate_user!
+  before_filter :ensure_admin!, except: [:index, :new, :edit]
   
   # GET /picks
   # GET /picks.json

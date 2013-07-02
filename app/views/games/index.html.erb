@@ -15,6 +15,7 @@
     <td><%= game.date.to_formatted_s(:long) %></td>
     <td><%= game.team_one.name %></td>
     <td><%= game.team_two.name %></td>
+    <td><%= link_to 'New Pick', new_pick_path %></td>
     <% if current_user.admin? %>
       <td><%= link_to 'Edit', edit_game_path(game) %></td>
       <td><%= link_to 'Delete', game, method: :delete, data: { confirm: 'Are you sure?' } %></td>

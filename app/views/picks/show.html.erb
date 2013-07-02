@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Pick team:</b>
+  <%= @pick.pick_team_id %>
+</p>
+
+<p>
+  <b>Date:</b>
+  <%= @pick.date %>
+</p>
+
+<p>
+  <b>User:</b>
+  <%= @pick.user_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_pick_path(@pick) %> |
+<%= link_to 'Back', picks_path %>

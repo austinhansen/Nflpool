@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  pick_team_id: 1
+  date: 2013-07-01
+  user_id: 1
+
+two:
+  pick_team_id: 1
+  date: 2013-07-01
+  user_id: 1

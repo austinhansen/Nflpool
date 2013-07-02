@@ -1,10 +1,9 @@
-<h1>Listing picks</h1>
+<h1>Listing Picks</h1>
 
 <table>
   <tr>
-    <th>Pick team</th>
-    <th>Date</th>
-    <th>User</th>
+    <th>Team</th>
+    <th>Chosen On</th>
     <th></th>
     <th></th>
     <th></th>
@@ -12,9 +11,8 @@
 
 <% @picks.each do |pick| %>
   <tr>
-    <td><%= pick.pick_team_id %></td>
-    <td><%= pick.date %></td>
-    <td><%= pick.user_id %></td>
+    <td><%= pick.pick_team.name %></td>
+    <td><%= pick.created_at.to_formatted_s(:long)  %></td>
     <td><%= link_to 'Show', pick %></td>
     <td><%= link_to 'Edit', edit_pick_path(pick) %></td>
     <td><%= link_to 'Destroy', pick, method: :delete, data: { confirm: 'Are you sure?' } %></td>

@@ -49,6 +49,7 @@ background: white;
 .navbar .nav > li > a { 
 	color: black;
 	text-shadow: none;
+	font-weight: bold;
 }
 .main-inner a:hover { 
 	color: #bdc3c7; 

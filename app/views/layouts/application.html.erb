@@ -30,13 +30,15 @@
 			</div>
 		</div>
 
-		
+	<% if current_page? root_path %>	
+	<% else %>
 	<header class="hero-unit main-hero">
 		<div class="container">
 	  		<h1><a href="/">NFL Pool</a></h1>
 	  		<p>The best way to run your football pool</p>	
 		</div>
 	</header>
+	<% end %>
 	
 	<div class="container">
 

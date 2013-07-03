@@ -7,9 +7,9 @@ gem 'rails', '4.0.0'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 
-gem 'devise'
-gem 'simple_form'
-
+gem 'devise', :github => 'plataformatec/devise', :branch => 'rails4'
+gem 'simple_form', :git => 'git://github.com/plataformatec/simple_form.git'
+gem 'protected_attributes'
 
 
 group :development, :test do
@@ -20,13 +20,14 @@ group :development, :test do
 end
 
 group :production do
+	gem 'rails_12factor'
 	gem 'pg'
 end
 
 
 # Gems used only for assets and not required
 # in production environments by default.
-group :assets do
+
   gem 'sass-rails',   '~> 4.0.0'
   gem 'coffee-rails', '~> 4.0.0'
 
@@ -34,7 +35,7 @@ group :assets do
   # gem 'therubyracer', :platforms => :ruby
 
   gem 'uglifier', '>= 1.0.3'
-end
+
 
 gem 'jquery-rails'
 

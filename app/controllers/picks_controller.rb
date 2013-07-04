@@ -1,7 +1,7 @@
 class PicksController < ApplicationController
   before_filter :authenticate_user!
   before_filter :ensure_admin!, except: [:index, :new, :edit]
-  
+
   # GET /picks
   # GET /picks.json
   def index
@@ -83,4 +83,10 @@ class PicksController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  private
+
+    def picks_params
+      params.require(:game).permit(:team_one_id, :team_two_id, :winning_team_id, :date)
+    end
 end

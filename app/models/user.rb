@@ -10,17 +10,7 @@ class User < ActiveRecord::Base
   attr_accessible :email, :password, :password_confirmation, :remember_me, 
   				  :first_name, :last_name, :profile_name, :points, :admin
   # attr_accessible :title, :body
-  validates :first_name, presence: true
-  
-  validates :last_name, presence: true
-
-  validates :profile_name, presence: true,
-                           uniqueness: true,
-                           format: {
-                            with: /A^[a-zA-z0-9_-]+$z/,
-                            message: 'Must be formatted correctly.'
-                           }
-
+ 
   def gravatar_url
     stripped_email = email.strip
     downcased_email = stripped_email.downcase

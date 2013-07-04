@@ -5,3 +5,4 @@
 # Make sure the secret is at least 30 characters and all random,
 # no regular words or you'll be exposed to dictionary attacks.
 Nflpool::Application.config.secret_token = '6db38af937c63c7c90c1bf5d7bc8645bb9d18d3cdb93079cea90dd6004cd5414bd18e166f583872b68de05c2fa0927fcfc7728e91693865891bab33dfb508d58'
+Nflpool::Application.config.secret_key_base = '2346db38af937c63c7c90c1bf5d7bc8645bb9d18d3cdb93079cea90dd6004cd5414bd18e166f583872b68de05c2fa0927fcfc7728e91693865891bab33dfb508d58'

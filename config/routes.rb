@@ -1,7 +1,9 @@
 Nflpool::Application.routes.draw do
 
-  resources :picks
-  resources :games
+
+  resources :games do
+    resources :picks
+  end
 
   devise_for :users
 

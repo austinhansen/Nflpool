@@ -43,7 +43,7 @@ class PicksController < ApplicationController
   # POST /picks
   # POST /picks.json
   def create
-    @pick = Pick.new(params[:pick])
+    @pick = Pick.new(picks_params)
 
     respond_to do |format|
       if @pick.save
@@ -62,7 +62,7 @@ class PicksController < ApplicationController
     @pick = Pick.find(params[:id])
 
     respond_to do |format|
-      if @pick.update_attributes(params[:pick])
+      if @pick.update_attributes(picks_params)
         format.html { redirect_to @pick, notice: 'Pick was successfully updated.' }
         format.json { head :no_content }
       else
@@ -87,6 +87,6 @@ class PicksController < ApplicationController
   private
 
     def picks_params
-      params.require(:game).permit(:team_one_id, :team_two_id, :winning_team_id, :date)
+      params.require(:pick).permit(:game_id, :pick_team, :user_id)
     end
 end

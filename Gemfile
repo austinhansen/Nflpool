@@ -9,7 +9,6 @@ gem 'rails', '4.0.0'
 
 gem 'devise', :github => 'plataformatec/devise', :branch => 'rails4'
 gem 'simple_form', :git => 'git://github.com/plataformatec/simple_form.git'
-gem 'protected_attributes'
 
 
 group :development, :test do

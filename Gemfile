@@ -7,7 +7,7 @@ gem 'rails', '4.0.0'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 
-gem 'devise', :github => 'plataformatec/devise', :branch => 'rails4'
+gem 'devise',   '~> 3.0.0.rc'
 gem 'simple_form', :git => 'git://github.com/plataformatec/simple_form.git'
 
 

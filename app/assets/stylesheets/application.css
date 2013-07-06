@@ -9,7 +9,7 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require_tree .
- *= require_self 
+ *= require_self
  */
 
 
@@ -46,16 +46,12 @@ background: white;
 	box-shadow: none;
 }
 
-.navbar .nav > li > a { 
+.navbar .nav > li > a {
 	color: black;
 	text-shadow: none;
 	font-weight: bold;
 }
-.main-inner a:hover { 
-	color: #bdc3c7; 
+.main-inner a:hover {
+	color: #bdc3c7;
 }
 
-
-td {
-	: strong;
-}

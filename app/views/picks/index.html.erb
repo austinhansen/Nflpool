@@ -11,7 +11,7 @@
 
 <% @picks.each do |pick| %>
   <tr>
-    <td><%= pick.pick_team_id %></td>
+    <td><%= pick.pick_team.name %></td>
     <td><%= pick.created_at.to_formatted_s(:long)  %></td>
 
 

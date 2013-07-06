@@ -16,7 +16,7 @@ class PicksController < ApplicationController
   # GET /picks/1
   # GET /picks/1.json
   def show
-    @pick = Pick.find(params[:id])
+    @pick = @game.picks.find(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb
@@ -27,7 +27,8 @@ class PicksController < ApplicationController
   # GET /picks/new
   # GET /picks/new.json
   def new
-    @pick = Pick.new
+    @game = Game.find params[:game_id]
+    @pick = @game.picks.build(user_id: current_user.id)
 
     respond_to do |format|
       format.html # new.html.erb
@@ -47,7 +48,7 @@ class PicksController < ApplicationController
 
     respond_to do |format|
       if @pick.save
-        format.html { redirect_to @pick, notice: 'Pick was successfully created.' }
+        format.html { redirect_to location:game_pick_url(@game, @pick), notice: 'Pick was successfully created.' }
         format.json { render json: @pick, status: :created, location: @pick }
       else
         format.html { render action: "new" }
@@ -87,6 +88,6 @@ class PicksController < ApplicationController
   private
 
     def picks_params
-      params.require(:pick).permit(:game_id, :pick_team, :user_id)
+      params.require(:pick).permit(:game_id, :pick_team_id, :user_id, :date)
     end
 end

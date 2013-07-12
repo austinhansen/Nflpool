@@ -27,9 +27,11 @@ class PicksController < ApplicationController
   # GET /picks/new
   # GET /picks/new.json
   def new
+  if current_user.picks.where(game_id: params[:game_id])
+    @pick =
+  end
+
     @game = Game.find params[:game_id]
-    @pick = @game.picks.build(user_id: current_user.id)
-    @pick.save
 
     respond_to do |format|
       format.html # new.html.erb
@@ -45,7 +47,10 @@ class PicksController < ApplicationController
   # POST /picks
   # POST /picks.json
   def create
-    @pick = Pick.new(picks_params)
+    @game = Game.find params[:game_id]
+    @pick = @game.picks.build(picks_params)
+    @pick.user = current_user
+    @pick.save
 
     respond_to do |format|
       if @pick.save

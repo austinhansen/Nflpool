@@ -2,9 +2,9 @@
   <%= f.error_notification %>
 
   <div class="form-inputs">
-    <%= f.input :pick_team_id, label: 'Winning Team', :include_blank => false, collection: Team.all, label_method: :name %>
-    <%= f.input :user_id, :as => :hidden, :input_html => { :value => current_user } %>
-    <%= f.input :game_id, :as => :hidden, :input_html => { :value => @game } %>
+    <%= f.input :pick_team_id, label: false, :include_blank => false, collection: [@game.team_one, @game.team_two], label_method: :name, as: :radio_buttons %>
+
+
   </div>
 
 

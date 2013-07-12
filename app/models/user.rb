@@ -8,6 +8,22 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
+  def picks_count
+    self.picks.count
+  end
+
+  def points
+    point_tracker = 0
+    self.picks.each do |pick|
+      if pick.result
+        point_tracker = point_tracker + 50
+      elsif pick.result == false
+        point_tracker = point_tracker - 50
+      end
+    end
+    point_tracker
+  end
+
   # attr_accessible :title, :body
 
   def gravatar_url

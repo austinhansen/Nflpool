@@ -4,4 +4,5 @@ class Game < ActiveRecord::Base
 	belongs_to :winning_team, class_name: "Team", foreign_key: "winning_team_id"
 	has_many :picks
 
+
 end

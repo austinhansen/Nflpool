@@ -29,6 +29,7 @@ class PicksController < ApplicationController
   def new
     @game = Game.find params[:game_id]
     @pick = @game.picks.build(user_id: current_user.id)
+    @pick.save
 
     respond_to do |format|
       format.html # new.html.erb
@@ -64,7 +65,7 @@ class PicksController < ApplicationController
 
     respond_to do |format|
       if @pick.update_attributes(picks_params)
-        format.html { redirect_to @pick, notice: 'Pick was successfully updated.' }
+        format.html { redirect_to games_path, notice: 'Pick was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }

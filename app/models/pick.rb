@@ -7,4 +7,5 @@ class Pick < ActiveRecord::Base
   belongs_to :game
 
 
+
 end

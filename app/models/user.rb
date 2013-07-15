@@ -15,10 +15,12 @@ class User < ActiveRecord::Base
   def points
     point_tracker = 0
     self.picks.each do |pick|
-      if pick.result
-        point_tracker = point_tracker + 50
-      elsif pick.result == false
-        point_tracker = point_tracker - 50
+      if pick.wager != nil
+        if pick.result
+          point_tracker = point_tracker + pick.wager
+        elsif pick.result == false
+          point_tracker = point_tracker - pick.wager
+        end
       end
     end
     point_tracker

@@ -106,6 +106,6 @@ class PicksController < ApplicationController
   private
 
     def picks_params
-      params.require(:pick).permit(:game_id, :pick_team_id, :user_id, :date) if params[:pick]
+      params.require(:pick).permit(:game_id, :pick_team_id, :user_id, :date, :wager) if params[:pick]
     end
 end

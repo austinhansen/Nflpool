@@ -27,15 +27,27 @@ class PicksController < ApplicationController
   # GET /picks/new
   # GET /picks/new.json
   def new
-  if current_user.picks.where(game_id: params[:game_id])
-    @pick =
-  end
-
+    if current_user.picks.where(game_id: params[:game_id]).any?
     @game = Game.find params[:game_id]
+    @pick = @game.picks.find(params[:id])
 
-    respond_to do |format|
-      format.html # new.html.erb
-      format.json { render json: @pick }
+    @pick.user = current_user
+    @pick.save
+
+
+      respond_to do |format|
+        format.html # edit.html.erb
+        format.json { render json: @pick }
+      end
+    else
+
+      @game = Game.find params[:game_id]
+      @pick = @game.picks.build(picks_params)
+
+      respond_to do |format|
+        format.html # new.html.erb
+        format.json { render json: @pick }
+      end
     end
   end
 
@@ -54,10 +66,10 @@ class PicksController < ApplicationController
 
     respond_to do |format|
       if @pick.save
-        format.html { redirect_to location:game_pick_url(@game, @pick), notice: 'Pick was successfully created.' }
+        format.html { redirect_to games_path, notice: 'Pick was successfully created.' }
         format.json { render json: @pick, status: :created, location: @pick }
       else
-        format.html { render action: "new" }
+        format.html { render action: "new", id: @pick.id }
         format.json { render json: @pick.errors, status: :unprocessable_entity }
       end
     end
@@ -94,6 +106,6 @@ class PicksController < ApplicationController
   private
 
     def picks_params
-      params.require(:pick).permit(:game_id, :pick_team_id, :user_id, :date)
+      params.require(:pick).permit(:game_id, :pick_team_id, :user_id, :date) if params[:pick]
     end
 end

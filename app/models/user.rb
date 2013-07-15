@@ -26,6 +26,12 @@ class User < ActiveRecord::Base
     point_tracker
   end
 
+
+
+
+
+
+
   # attr_accessible :title, :body
 
   def gravatar_url

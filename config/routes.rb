@@ -6,6 +6,7 @@ Nflpool::Application.routes.draw do
   end
 
   devise_for :users
+  resources :users
 
   devise_scope :user do
     get 'register', to: 'devise/registrations#new', as: :register

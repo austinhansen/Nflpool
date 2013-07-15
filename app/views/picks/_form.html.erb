@@ -3,7 +3,7 @@
 
   <div class="form-inputs">
     <%= f.input :pick_team_id, label: false, :include_blank => false, collection: [@game.team_one, @game.team_two], label_method: :name, as: :radio_buttons %>
-    <%= f.input :wager, label: 'Bet', collection: 25..300, :include_blank => false %>
+    <%= f.input :wager, label: 'Points', collection: 25..300, :include_blank => false %>
 
 
   </div>
@@ -12,7 +12,10 @@
     <div class="form-actions">
       <h4>Betting is now closed for this game</h4>
     </div>
-
+  <% elsif @game.date < Date.current %>
+    <div class="form-actions">
+      <h4>Betting is now closed for this game</h4>
+    </div>
   <% else %>
     <div class="form-actions">
 

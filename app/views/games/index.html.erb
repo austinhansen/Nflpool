@@ -1,4 +1,4 @@
-<h1>Listing Games</h1>
+<h1>Listing Games for Week <%= Date.current.cweek - 28 %></h1>
 
 <table>
   <tr>
@@ -11,17 +11,19 @@
   </tr>
 
 <% @games.each do |game| %>
-  <tr>
-    <td><%= game.date.to_formatted_s(:long) %></td>
-    <td><%= game.team_one.name %></td>
-    <td><%= game.team_two.name %></td>
-    <td><%= link_to 'Pick', new_game_pick_path(game) %></td>
-    <% if current_user.admin? %>
-      <td><%= link_to 'Edit', edit_game_path(game) %></td>
-      <td><%= link_to 'Delete', game, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-    <% else %>
+  <% if game.date.beginning_of_week == Date.current.beginning_of_week %>
+    <tr>
+      <td><%= game.date.to_formatted_s(:long) %></td>
+      <td><%= game.team_one.name %></td>
+      <td><%= game.team_two.name %></td>
+      <td><%= link_to 'Pick', new_game_pick_path(game) %></td>
+      <% if current_user.admin? %>
+        <td><%= link_to 'Edit', edit_game_path(game) %></td>
+        <td><%= link_to 'Delete', game, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      <% else %>
+      <% end %>
+    </tr>
     <% end %>
-  </tr>
 <% end %>
 </table>
 

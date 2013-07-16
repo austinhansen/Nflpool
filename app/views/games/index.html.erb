@@ -1,4 +1,4 @@
-<h1>Listing Games for Week <%= Date.current.cweek - 28 %></h1>
+<h1>Games for Week <%= Date.current.cweek - 28 %></h1>
 <hr>
 <table>
   <tr>
@@ -10,10 +10,10 @@
     <th></th>
   </tr>
 
+  <h4>Thursday's games</h4>
   <% @games.each do |game| %>
     <% if game.date.beginning_of_week == Date.current.beginning_of_week %>
       <% if game.date.to_time.wday == 4 %>
-        <h4>Thursday's games</h4>
         <tr>
           <td><%= game.date.to_formatted_s(:long) %></td>
           <td><%= game.team_one.name %></td>
@@ -40,10 +40,10 @@
     <th></th>
   </tr>
 
+  <h4>Sunday's games</h4>
   <% @games.each do |game| %>
     <% if game.date.beginning_of_week == Date.current.beginning_of_week %>
       <% if game.date.to_time.wday == 0 %>
-        <h4>Sunday's games</h4>
         <tr>
           <td><%= game.date.to_formatted_s(:long) %></td>
           <td><%= game.team_one.name %></td>
@@ -70,10 +70,10 @@
     <th></th>
   </tr>
 
+  <h4>Monday's games</h4>
   <% @games.each do |game| %>
     <% if game.date.beginning_of_week == Date.current.beginning_of_week %>
       <% if game.date.to_time.wday == 1 %>
-        <h4>Monday's games</h4>
         <tr>
           <td><%= game.date.to_formatted_s(:long) %></td>
           <td><%= game.team_one.name %></td>

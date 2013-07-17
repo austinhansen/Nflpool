@@ -14,17 +14,7 @@
   <% @games.each do |game| %>
     <% if game.date.beginning_of_week == Date.current.beginning_of_week %>
       <% if game.date.to_time.wday == 4 %>
-        <tr>
-          <td><%= game.date.to_formatted_s(:long) %></td>
-          <td><%= game.team_one.name %></td>
-          <td><%= game.team_two.name %></td>
-          <td><%= link_to 'Pick', new_game_pick_path(game) %></td>
-          <% if current_user.admin? %>
-            <td><%= link_to 'Edit', edit_game_path(game) %></td>
-            <td><%= link_to 'Delete', game, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-          <% else %>
-          <% end %>
-        </tr>
+        <%= render 'game_tr', game: game %>
       <% end %>
     <% end %>
   <% end %>
@@ -44,17 +34,7 @@
   <% @games.each do |game| %>
     <% if game.date.beginning_of_week == Date.current.beginning_of_week %>
       <% if game.date.to_time.wday == 0 %>
-        <tr>
-          <td><%= game.date.to_formatted_s(:long) %></td>
-          <td><%= game.team_one.name %></td>
-          <td><%= game.team_two.name %></td>
-          <td><%= link_to 'Pick', new_game_pick_path(game) %></td>
-          <% if current_user.admin? %>
-            <td><%= link_to 'Edit', edit_game_path(game) %></td>
-            <td><%= link_to 'Delete', game, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-          <% else %>
-          <% end %>
-        </tr>
+        <%= render 'game_tr', game: game %>
       <% end %>
     <% end %>
   <% end %>
@@ -74,17 +54,7 @@
   <% @games.each do |game| %>
     <% if game.date.beginning_of_week == Date.current.beginning_of_week %>
       <% if game.date.to_time.wday == 1 %>
-        <tr>
-          <td><%= game.date.to_formatted_s(:long) %></td>
-          <td><%= game.team_one.name %></td>
-          <td><%= game.team_two.name %></td>
-          <td><%= link_to 'Pick', new_game_pick_path(game) %></td>
-          <% if current_user.admin? %>
-            <td><%= link_to 'Edit', edit_game_path(game) %></td>
-            <td><%= link_to 'Delete', game, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-          <% else %>
-          <% end %>
-        </tr>
+        <%= render 'game_tr', game: game %>
       <% end %>
     <% end %>
   <% end %>

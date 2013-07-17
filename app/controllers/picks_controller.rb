@@ -29,7 +29,7 @@ class PicksController < ApplicationController
   def new
     if current_user.picks.where(game_id: params[:game_id]).any?
     @game = Game.find params[:game_id]
-    @pick = @game.picks.find(params[:id])
+    @pick = @game.picks.find_by(user_id: current_user.id)
 
     @pick.user = current_user
     @pick.save
@@ -53,7 +53,8 @@ class PicksController < ApplicationController
 
   # GET /picks/1/edit
   def edit
-    @pick = Pick.find(params[:id])
+    if current_user.picks.where(game_id: params[:game_id]).any?
+      @pick = Pick.find(params[:id])
   end
 
   # POST /picks

@@ -8,19 +8,11 @@
 
   </div>
 
-  <% if @game.date == Date.current %>
-    <div class="form-actions">
-      <h4>Picks are now closed for this game</h4>
-    </div>
-  <% elsif @game.date < Date.current %>
-    <div class="form-actions">
-      <h4>Picks are now closed for this game</h4>
-    </div>
-  <% else %>
-    <div class="form-actions">
-
+  <div class="form-actions">
+    <% if @game.date <= Date.current %>
+        <h4>Picks are now closed for this game</h4>
+    <% else %>
         <%= f.button :submit, class: "btn btn-success" %>
-
-    </div>
-  <% end %>
+    <% end %>
+  </div>
 <% end %>

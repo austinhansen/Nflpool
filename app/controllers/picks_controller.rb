@@ -27,23 +27,13 @@ class PicksController < ApplicationController
   # GET /picks/new
   # GET /picks/new.json
   def new
-    if current_user.picks.where(game_id: params[:game_id]).any?
-      @game = Game.find params[:game_id]
-      @pick = @game.picks.find_by(user_id: current_user.id)
 
-      respond_to do |format|
-        format.html # edit.html.erb
-        format.json { render json: @pick }
-      end
-    else
+    @game = Game.find params[:game_id]
+    @pick = @game.picks.find_or_create_by(user_id: current_user.id)
 
-      @game = Game.find params[:game_id]
-      @pick = @game.picks.build(picks_params)
-
-      respond_to do |format|
-        format.html # new.html.erb
-        format.json { render json: @pick }
-      end
+    respond_to do |format|
+      format.html # new.html.erb
+      format.json { render json: @pick }
     end
   end
 

@@ -28,12 +28,8 @@ class PicksController < ApplicationController
   # GET /picks/new.json
   def new
     if current_user.picks.where(game_id: params[:game_id]).any?
-    @game = Game.find params[:game_id]
-    @pick = @game.picks.find_by(user_id: current_user.id)
-
-    @pick.user = current_user
-    @pick.save
-
+      @game = Game.find params[:game_id]
+      @pick = @game.picks.find_by(user_id: current_user.id)
 
       respond_to do |format|
         format.html # edit.html.erb
@@ -53,8 +49,7 @@ class PicksController < ApplicationController
 
   # GET /picks/1/edit
   def edit
-    if current_user.picks.where(game_id: params[:game_id]).any?
-      @pick = Pick.find(params[:id])
+    @pick = Pick.find(params[:id])
   end
 
   # POST /picks

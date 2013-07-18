@@ -8,6 +8,7 @@
     <% else %>
       <%= f.input :wager, label: 'Points', collection: 25..300, :include_blank => false %>
     <% end %>
+    <%= f.hidden_field :date, value: Date.current %>
 
   </div>
 

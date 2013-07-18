@@ -29,7 +29,7 @@ class PicksController < ApplicationController
   def new
 
     @game = Game.find params[:game_id]
-    @pick = @game.picks.find_or_create_by(user_id: current_user.id)
+    @pick = @game.picks.find_or_initialize_by(user_id: current_user.id)
 
     respond_to do |format|
       format.html # new.html.erb

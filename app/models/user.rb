@@ -26,7 +26,9 @@ class User < ActiveRecord::Base
     point_tracker
   end
 
-
+def full_name
+  first_name + " " + last_name
+end
 
 
 

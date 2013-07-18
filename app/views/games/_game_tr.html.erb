@@ -2,7 +2,7 @@
   <td><%= game.date.to_formatted_s(:long) %></td>
   <td><%= game.team_two.name %></td>
   <td><%= game.team_one.name %></td>
-  <td></td>
+  <td><%= game.spread %></td>
   <td>
     <% if game.picks.where(user_id: current_user.id).any? %>
       <%= link_to game.picks.find_by(user_id: current_user.id).wager, new_game_pick_path(game) %>

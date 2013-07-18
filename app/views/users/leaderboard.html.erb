@@ -10,13 +10,13 @@
     <th>Previous Points Earned</th>
   </tr>
 
-<% @users = User.all %>
+<% @users = User.find(:all, order: "points DESC") %>
 <% for user in @users %>
   <% if user == current_user %>
       <tr>
         <div class="user-highlight">
           <td><%= user.profile_name %></td>
-          <td><%= user.points %></td>
+          <td><%= user.user_points %></td>
           <td></td>
           <td></td>
           <td></td>
@@ -26,7 +26,7 @@
   <% else %>
     <tr>
       <td><%= user.profile_name %></td>
-      <td><%= user.points %></td>
+      <td><%= user.user_points %></td>
       <td></td>
       <td></td>
     </tr>

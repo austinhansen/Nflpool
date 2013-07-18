@@ -12,7 +12,7 @@ class User < ActiveRecord::Base
     self.picks.count
   end
 
-  def points
+  def user_points
     point_tracker = 250
     self.picks.each do |pick|
       if pick.wager != nil
@@ -23,6 +23,8 @@ class User < ActiveRecord::Base
         end
       end
     end
+    self.points = point_tracker
+    self.save
     point_tracker
   end
 
@@ -30,7 +32,10 @@ def full_name
   first_name + " " + last_name
 end
 
+def sort_users
+  all_users = User.all
 
+end
 
 
 

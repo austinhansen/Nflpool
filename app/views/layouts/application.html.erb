@@ -14,8 +14,8 @@
 					<ul class="nav pull-right">
 						<% if user_signed_in? %>
 							<li><%= link_to current_user.first_name, edit_user_registration_path %></li>
-							<% if current_user.points != nil %>
-								<li><a href="#"><%= current_user.points %> Points</a></li>
+							<% if current_user.user_points != nil %>
+								<li><a href="#"><%= current_user.user_points %> Points</a></li>
 							<% else %>
 								<li><a href="#">0 Points</a></li>
 							<% end%>

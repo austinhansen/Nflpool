@@ -8,7 +8,8 @@ Nflpool::Application.routes.draw do
   devise_for :users
 
   resources :users, only: :index do
-   resources :picks, only: [:index, :edit]
+   resources :picks, only: [:index]
+  get "leaderboard"
   end
 
   devise_scope :user do
@@ -16,7 +17,6 @@ Nflpool::Application.routes.draw do
     get 'login', to: 'devise/sessions#new', as: :login
     get 'logout', to: 'devise/sessions#destroy', as: :logout
   end
-
 
   root to: 'games#index'
   # The priority is based upon order of creation:

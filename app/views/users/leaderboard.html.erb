@@ -1,0 +1,36 @@
+<h1>Points Leaderboard</h1>
+<hr>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Total Points</th>
+    <th>Weekly Points Wagered</th>
+    <th>Weekly Points Earned</th>
+    <th>Previous Points Wagered</th>
+    <th>Previous Points Earned</th>
+  </tr>
+
+<% @users = User.all %>
+<% for user in @users %>
+  <% if user == current_user %>
+      <tr>
+        <div class="user-highlight">
+          <td><%= user.profile_name %></td>
+          <td><%= user.points %></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </div>
+      </tr>
+  <% else %>
+    <tr>
+      <td><%= user.profile_name %></td>
+      <td><%= user.points %></td>
+      <td></td>
+      <td></td>
+    </tr>
+  <% end %>
+<% end %>
+
+</table>

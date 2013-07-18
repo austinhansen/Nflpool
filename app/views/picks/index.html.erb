@@ -1,7 +1,8 @@
-<h1>Listing Picks</h1>
-
+<h1>Listing Picks for <%= User.find(params[:user_id]).full_name %></h1>
+<hr>
 <table>
   <tr>
+    <th>Wager</th>
     <th>Team</th>
     <th>Chosen On</th>
     <th></th>
@@ -9,9 +10,11 @@
     <th></th>
   </tr>
 
-<% @picks.each do |pick| %>
+<% User.find(params[:user_id]).picks.each do |pick| %>
+
   <tr>
-    <td><%= pick.pick_team.name %></td>
+    <td><%= pick.wager %></td>
+    <td><%= pick.pick_team_id %></td>
     <td><%= pick.created_at.to_formatted_s(:long)  %></td>
 
 
@@ -23,4 +26,5 @@
 
 <br />
 
-<%= link_to 'Back', games_path %>
+<%= link_to 'Back', users_path %>
+

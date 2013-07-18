@@ -4,8 +4,11 @@
   <td><%= game.team_one.name %></td>
   <td></td>
   <td>
-
+    <% if game.picks.where(user_id: current_user.id).any? %>
+      <%= link_to game.picks.find_by(user_id: current_user.id).wager, new_game_pick_path(game) %>
+    <% else %>
       <%= link_to 'Pick', new_game_pick_path(game) %></td>
+    <% end %>
 
   <% if current_user.admin? %>
     <td><%= link_to 'Edit', edit_game_path(game) %></td>

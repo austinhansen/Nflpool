@@ -28,6 +28,16 @@ class User < ActiveRecord::Base
     point_tracker
   end
 
+def weekly_wagers
+  wager_tracker = 0
+  self.picks.each do |pick|
+    if pick.wager != nil && (pick.date.beginning_of_week == Date.current.beginning_of_week)
+        wager_tracker = wager_tracker + pick.wager
+    end
+  wager_tracker
+  end
+end
+
 def full_name
   first_name + " " + last_name
 end

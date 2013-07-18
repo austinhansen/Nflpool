@@ -1,0 +1,16 @@
+<h1>All Users</h1>
+<hr>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Picks</th>
+  </tr>
+
+<% for user in @users %>
+  <tr>
+    <td><%= user.full_name %></td>
+    <td><%= link_to 'Picks', user_picks_path(user) %></td>
+  </tr>
+<% end %>
+
+</table>

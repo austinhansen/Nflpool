@@ -13,7 +13,13 @@
 
   <div class="form-actions">
     <% if @game.date <= Date.current %>
+
+      <% if current_user.admin? %>
+        <%= f.button :submit, class: "btn btn-success" %>
+      <% else %>
         <h4>Picks are now closed for this game</h4>
+      <% end %>
+
     <% else %>
         <%= f.button :submit, class: "btn btn-success" %>
     <% end %>

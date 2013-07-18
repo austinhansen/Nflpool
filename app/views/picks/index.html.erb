@@ -13,7 +13,7 @@
 <% User.find(params[:user_id]).picks.each do |pick| %>
 
   <tr>
-    <td><%= pick.wager %></td>
+    <td><%= link_to pick.wager, new_game_pick_path(pick.game_id) %></td>
     <td><%= pick.pick_team_id %></td>
     <td><%= pick.created_at.to_formatted_s(:long)  %></td>
 

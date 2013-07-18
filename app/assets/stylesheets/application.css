@@ -55,3 +55,19 @@ background: white;
 	color: #bdc3c7;
 }
 
+h2 {
+  text-align: center;
+}
+
+.centered-text {
+  text-align: center;
+}
+
+.logo {
+  padding-left: 50px;
+}
+
+
+.user-highlight {
+    background-color: lightblue;
+  }

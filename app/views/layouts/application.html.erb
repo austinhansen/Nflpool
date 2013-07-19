@@ -10,12 +10,15 @@
 		<div class="navbar">
 			<div class="navbar-inner main-inner">
 				<div class="container">
-					<a href="#" class="logo brand"><% link_to games_path %>The Replacements</a>
+					<% if current_page? new_user_session_path %>
+					<% else %>
+						<h3 class="pull-left"><%= link_to 'The Replacements', games_path %></h3>
+					<% end %>
 					<ul class="nav pull-right">
 						<% if user_signed_in? %>
 							<li><%= link_to current_user.first_name, edit_user_registration_path %></li>
 							<% if current_user.user_points != nil %>
-								<li><a href="#"><%= current_user.user_points %> Points</a></li>
+								<li><%= link_to "#{current_user.user_points} Points", user_leaderboard_path(current_user.id) %></li>
 							<% else %>
 								<li><a href="#">0 Points</a></li>
 							<% end%>

@@ -18,11 +18,15 @@ h4 {
 }
 
 .table-spacing td:nth-child(-2n+2) {
-  min-width: 175px ;
+  min-width: 250px ;
+}
+
+.table-spacing td:nth-child(-2n+2) {
+  min-width: 250px ;
 }
 
 .table-spacing td:nth-child(-2n+1) {
-  min-width: 100px ;
+  min-width: 165px ;
 }
 
 h1 {

@@ -27,7 +27,7 @@ box-shadow: 0 0 40px rgba(0,0,0,0.1) inset;
 .hero-unit a, .hero-unit {
 color: black;
 vertical-align: center;
-
+text-decoration: none;
 }
 
 .main-hero a {
@@ -53,6 +53,17 @@ background: white;
 }
 .main-inner a:hover {
 	color: #bdc3c7;
+  text-decoration: none;
+}
+
+.navbar a {
+  color: black;
+  text-shadow: none;
+  font-weight: bold;
+}
+.main-inner a:hover {
+  color: #bdc3c7;
+  text-decoration: none;
 }
 
 h2 {

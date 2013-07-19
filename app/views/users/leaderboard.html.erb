@@ -17,7 +17,7 @@
     <tr>
       <td><%= user_rank%></td>
       <% user_rank = user_rank + 1%>
-      <td><%= user.profile_name %></td>
+      <td><%= link_to user.profile_name, user_picks_path(user) %></td>
       <td><%= user.user_points %></td>
       <td><%= user.weekly_wagers %></td>
       <td><%= user.weekly_points %></td>

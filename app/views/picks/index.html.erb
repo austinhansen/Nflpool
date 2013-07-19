@@ -1,30 +1,32 @@
-<h1>Listing Picks for <%= User.find(params[:user_id]).full_name %></h1>
+<h1>Listing Picks for <%= User.find(params[:user_id]).profile_name %></h1>
 <hr>
 <table>
   <tr>
     <th>Wager</th>
-    <th>Team</th>
-    <th>Chosen On</th>
-    <th></th>
-    <th></th>
+    <th>Pick</th>
+    <th>Game Date</th>
+    <th>Away Team</th>
+    <th>Home Team</th>
     <th></th>
   </tr>
 
 <% User.find(params[:user_id]).picks.each do |pick| %>
 
   <tr>
-    <td><%= link_to pick.wager, new_game_pick_path(pick.game_id) %></td>
-    <td><%= pick.pick_team_id %></td>
-    <td><%= pick.created_at.to_formatted_s(:long)  %></td>
-
-
-
-
+    <% if current_user.admin? %>
+      <td><%= link_to pick.wager, new_game_pick_path(pick.game_id) %></td>
+    <% else %>
+      <td><%= pick.wager %></td>
+    <% end %>
+    <td><%= pick.pick_team.name %></td>
+    <td><%= Game.find_by(id: pick.game_id).date  %></td>
+    <td><%= Game.find_by(id: pick.game_id).team_two.name %></td>
+    <td><%= Game.find_by(id: pick.game_id).team_one.name %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'Back', users_path %>
+<%= link_to 'Back', :back %>
 

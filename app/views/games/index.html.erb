@@ -1,65 +1,66 @@
 <h1>Games for Week <%= Date.current.cweek - 28 %></h1>
 <hr>
-<table class="game-index">
-  <tr>
-    <th>Date</th>
-    <th>Away Team</th>
-    <th>Home Team</th>
-    <th>Spread</th>
-    <th>Wager</th>
-    <th></th>
-  </tr>
+<div class="table-spacing">
+  <table>
+    <tr>
+      <th>Date</th>
+      <th>Away Team</th>
+      <th>Home Team</th>
+      <th>Spread</th>
+      <th>Wager</th>
+      <th></th>
+    </tr>
 
-  <h4>Thursday's games</h4>
-  <% @games.each do |game| %>
-    <% if game.date.beginning_of_week == Date.current.beginning_of_week %>
-      <% if game.date.to_time.wday == 4 %>
-        <%= render 'game_tr', game: game %>
+    <h4>Thursday's games</h4>
+    <% @games.each do |game| %>
+      <% if game.date.beginning_of_week == Date.current.beginning_of_week %>
+        <% if game.date.to_time.wday == 4 %>
+          <%= render 'game_tr', game: game %>
+        <% end %>
       <% end %>
     <% end %>
-  <% end %>
-</table>
+  </table>
 
-<table class="game-index">
-  <tr>
-    <th>Date</th>
-    <th>Away Team</th>
-    <th>Home Team</th>
-    <th>Spread</th>
-    <th></th>
-    <th></th>
-  </tr>
+  <table>
+    <tr>
+      <th>Date</th>
+      <th>Away Team</th>
+      <th>Home Team</th>
+      <th>Spread</th>
+      <th></th>
+      <th></th>
+    </tr>
 
-  <h4>Sunday's games</h4>
-  <% @games.each do |game| %>
-    <% if game.date.beginning_of_week == Date.current.beginning_of_week %>
-      <% if game.date.to_time.wday == 0 %>
-        <%= render 'game_tr', game: game %>
+    <h4>Sunday's games</h4>
+    <% @games.each do |game| %>
+      <% if game.date.beginning_of_week == Date.current.beginning_of_week %>
+        <% if game.date.to_time.wday == 0 %>
+          <%= render 'game_tr', game: game %>
+        <% end %>
       <% end %>
     <% end %>
-  <% end %>
-</table>
+  </table>
 
-<table class="game-index">
-  <tr>
-    <th>Date</th>
-    <th>Away Team</th>
-    <th>Home Team</th>
-    <th>Spread</th>
-    <th></th>
-    <th></th>
-  </tr>
+  <table>
+    <tr>
+      <th>Date</th>
+      <th>Away Team</th>
+      <th>Home Team</th>
+      <th>Spread</th>
+      <th></th>
+      <th></th>
+    </tr>
 
-  <h4>Monday's games</h4>
-  <% @games.each do |game| %>
-    <% if game.date.beginning_of_week == Date.current.beginning_of_week %>
-      <% if game.date.to_time.wday == 1 %>
-        <%= render 'game_tr', game: game %>
+    <h4>Monday's games</h4>
+    <% @games.each do |game| %>
+      <% if game.date.beginning_of_week == Date.current.beginning_of_week %>
+        <% if game.date.to_time.wday == 1 %>
+          <%= render 'game_tr', game: game %>
+        <% end %>
       <% end %>
     <% end %>
-  <% end %>
-</table>
-
+  </table>
+</div>
 <br />
 <% if current_user.admin? %>
   <%= link_to 'New Game', new_game_path, class: "btn btn-success" %>

@@ -18,9 +18,9 @@
           <td><%= user.profile_name %></td>
           <td><%= user.user_points %></td>
           <td><%= user.weekly_wagers %></td>
-          <td></td>
-          <td></td>
-          <td></td>
+          <td><%= user.weekly_points %></td>
+          <td><%= user.last_week_wagers %></td>
+          <td><%= user.last_week_points %></td>
         </div>
       </tr>
   <% else %>
@@ -28,9 +28,11 @@
       <td><%= user.profile_name %></td>
       <td><%= user.user_points %></td>
       <td><%= user.weekly_wagers %></td>
-      <td></td>
+      <td><%= user.weekly_points %></td>
     </tr>
   <% end %>
 <% end %>
 
 </table>
+<br>
+<%= link_to "Back", :back %>

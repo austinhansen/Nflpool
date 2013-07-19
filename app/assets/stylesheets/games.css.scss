@@ -17,17 +17,18 @@ h4 {
   padding-top: 20px;
 }
 
-.table-spacing td:nth-child(-2n+2) {
-  min-width: 250px ;
+.table-spacing td {
+  min-width: 50px ;
 }
 
-.table-spacing td:nth-child(-2n+2) {
-  min-width: 250px ;
+.table-spacing td:nth-child(-n+3) {
+  min-width: 155px ;
 }
 
-.table-spacing td:nth-child(-2n+1) {
-  min-width: 165px ;
+/*.table-spacing td:nth-child(-2n+2) {
+  min-width: 250px ;
 }
+*/
 
 h1 {
   text-align: center;

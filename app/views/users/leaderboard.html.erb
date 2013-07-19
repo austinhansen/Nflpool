@@ -2,6 +2,7 @@
 <hr>
 <table>
   <tr>
+    <th>Rank</th>
     <th>Name</th>
     <th>Total Points</th>
     <th>Weekly Points Wagered</th>
@@ -11,28 +12,19 @@
   </tr>
 
 <% @users = User.find(:all, order: "points DESC") %>
+<% user_rank = 1 %>
 <% for user in @users %>
-  <% if user == current_user %>
-      <tr>
-        <div class="user-highlight">
-          <td><%= user.profile_name %></td>
-          <td><%= user.user_points %></td>
-          <td><%= user.weekly_wagers %></td>
-          <td><%= user.weekly_points %></td>
-          <td><%= user.last_week_wagers %></td>
-          <td><%= user.last_week_points %></td>
-        </div>
-      </tr>
-  <% else %>
     <tr>
+      <td><%= user_rank%></td>
+      <% user_rank = user_rank + 1%>
       <td><%= user.profile_name %></td>
       <td><%= user.user_points %></td>
       <td><%= user.weekly_wagers %></td>
       <td><%= user.weekly_points %></td>
+      <td><%= user.last_week_wagers %></td>
+      <td><%= user.last_week_points %></td>
     </tr>
   <% end %>
-<% end %>
-
 </table>
 <br>
 <%= link_to "Back", :back %>

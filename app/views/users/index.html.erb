@@ -8,10 +8,10 @@
 
 <% for user in @users %>
   <tr>
-    <td><%= user.full_name %></td>
+    <td><%= user.username %></td>
     <td><%= link_to 'Picks', user_picks_path(user) %></td>
   </tr>
 <% end %>
 
 </table>
-<%= link_to 'Back', edit_user_registration_path %>
+<%= link_to 'Back', :back %>

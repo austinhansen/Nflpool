@@ -1,4 +1,4 @@
-<h1>Games for Week <%= Date.current.cweek - 28 %></h1>
+<h1>Games for Week <%= Date.current.cweek - 35 %></h1>
 <hr>
 <div class="table-spacing">
   <table>
@@ -8,7 +8,6 @@
       <th>Home Team</th>
       <th>Spread</th>
       <th>Wager</th>
-      <th></th>
     </tr>
 
     <h4>Thursday's games</h4>
@@ -61,7 +60,9 @@
     <% end %>
   </table>
 </div>
+
 <br />
+
 <% if current_user.admin? %>
   <%= link_to 'New Game', new_game_path, class: "btn btn-success" %>
 <% else %>

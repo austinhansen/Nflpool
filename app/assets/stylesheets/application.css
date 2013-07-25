@@ -15,19 +15,17 @@
 
 
 .main-hero.hero-unit {
-text-align: center;
-vertical-align: center;
-background-color: rgba(44, 62, 80,0.3);
-color:#34495e;
-box-shadow: 0 0 40px rgba(0,0,0,0.1) inset;
-
-
+  text-align: center;
+  vertical-align: center;
+  background-color: rgba(44, 62, 80,0.3);
+  color:#34495e;
+  box-shadow: 0 0 40px rgba(0,0,0,0.1) inset;
 }
 
 .hero-unit a, .hero-unit {
-color: black;
-vertical-align: center;
-text-decoration: none;
+  color: black;
+  vertical-align: center;
+  text-decoration: none;
 }
 
 .main-hero a {
@@ -40,30 +38,19 @@ background: white;
 
 }
 
-.navbar-inner.main-inner {
-	background: none;
-	border: none;
-	box-shadow: none;
-}
-
-.navbar .nav > li > a {
-	color: black;
-	text-shadow: none;
-	font-weight: bold;
-}
 .main-inner a:hover {
-	color: #bdc3c7;
+	color: #f0f0f0;
   text-decoration: none;
 }
 
 .navbar a {
-  color: black;
+  color: white;
   text-shadow: none;
   font-weight: bold;
 }
-.main-inner a:hover {
-  color: #bdc3c7;
-  text-decoration: none;
+
+.navbar .nav {
+  vertical-align: center;
 }
 
 h2 {
@@ -82,3 +69,14 @@ h2 {
 .user-highlight {
     background-color: lightblue;
   }
+
+.btn {
+
+}
+
+.navbar .nav > li > a {
+  border-right: none;
+  border-left: none;
+  line-height: 40px;
+}
+

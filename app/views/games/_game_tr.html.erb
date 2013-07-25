@@ -1,14 +1,30 @@
+
 <tr>
   <td><%= game.date.to_formatted_s(:long) %></td>
-  <td><%= game.team_two.name %></td>
-  <td><%= game.team_one.name %></td>
+
+  <% if game.picks.find_by(user_id: current_user.id) != nil %>
+    <% if game.picks.find_by(user_id: current_user.id).pick_team_id == game.team_two_id %>
+      <td><strong><%= game.team_two.name %></strong></td>
+      <td><%= game.team_one.name %></td>
+
+    <% else %>
+      <td><%= game.team_two.name %></td>
+      <td><strong><%= game.team_one.name %></strong></td>
+    <% end %>
+
+  <% else %>
+    <td><%= game.team_two.name %></td>
+    <td><%= game.team_one.name %></td>
+  <% end %>
+
   <td><%= game.spread %></td>
   <td>
     <% if game.picks.where(user_id: current_user.id).any? %>
       <%= link_to game.picks.find_by(user_id: current_user.id).wager, new_game_pick_path(game) %>
     <% else %>
-      <%= link_to 'Pick', new_game_pick_path(game) %></td>
+      <%= link_to 'Pick', new_game_pick_path(game) %>
     <% end %>
+  </td>
 
   <% if current_user.admin? %>
     <td><%= link_to 'Edit', edit_game_path(game) %></td>

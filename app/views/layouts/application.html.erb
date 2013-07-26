@@ -13,7 +13,7 @@
 				<div class="container">
 					<% if current_page? new_user_session_path %>
 					<% else %>
-						<h3 class="pull-left"><%= link_to 'The Replacements', games_path %></h3>
+						<h3 class="pull-left" id="branded"><%= link_to 'The Replacements', games_path %></h3>
 					<% end %>
 					<ul class="nav pull-right">
 						<% if user_signed_in? %>

@@ -12,7 +12,9 @@
  *= require_self
  */
 
-
+#branded {
+  font-family: 'Graduate', sans-serif;
+}
 
 .main-hero.hero-unit {
   text-align: center;

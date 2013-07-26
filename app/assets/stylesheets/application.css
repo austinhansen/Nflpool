@@ -15,10 +15,9 @@
 
 
 .main-hero.hero-unit {
+
   text-align: center;
   vertical-align: center;
-  background-color: rgba(44, 62, 80,0.3);
-  color:#34495e;
   box-shadow: 0 0 40px rgba(0,0,0,0.1) inset;
 }
 

@@ -15,7 +15,6 @@
 
 
 .main-hero.hero-unit {
-
   text-align: center;
   vertical-align: center;
   box-shadow: 0 0 40px rgba(0,0,0,0.1) inset;
@@ -28,7 +27,9 @@
 }
 
 .main-hero a {
-color:#34495e;
+  font-family: 'Graduate', sans-serif;
+  font-size: 1.2em;
+  color:#34495e;
 
 }
 

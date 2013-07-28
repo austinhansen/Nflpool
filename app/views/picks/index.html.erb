@@ -1,13 +1,12 @@
 <h1>Listing Picks for <%= User.find(params[:user_id]).profile_name %></h1>
 <hr>
-<table>
+<table class="table-bordered table-striped table-hover">
   <tr>
     <th>Wager</th>
     <th>Pick</th>
     <th>Game Date</th>
     <th>Away Team</th>
     <th>Home Team</th>
-    <th></th>
   </tr>
 
 <% User.find(params[:user_id]).picks.each do |pick| %>

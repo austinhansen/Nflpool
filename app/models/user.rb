@@ -47,9 +47,9 @@ def weekly_points
   self.picks.each do |pick|
     if pick.wager != nil && (pick.date.beginning_of_week == Date.current.beginning_of_week)
       if pick.result
-        point_tracker = points_tracker + pick.wager
+        points_tracker = points_tracker + pick.wager
       elsif pick.result == false
-        point_tracker = points_tracker - pick.wager
+        points_tracker = points_tracker - pick.wager
       end
     end
   end

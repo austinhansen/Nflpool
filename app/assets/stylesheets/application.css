@@ -20,6 +20,7 @@
   text-align: center;
   vertical-align: center;
   box-shadow: 0 0 40px rgba(0,0,0,0.1) inset;
+  margin-bottom: -80px;
 }
 
 .hero-unit a, .hero-unit {
@@ -35,11 +36,6 @@
 
 }
 
-.row {
-background: white;
-
-}
-
 .main-inner a:hover {
 	color: #1dd2af;
   text-decoration: none;
@@ -49,10 +45,6 @@ background: white;
   color: white;
   text-shadow: none;
   font-weight: bold;
-}
-
-.navbar .nav {
-  vertical-align: center;
 }
 
 h2 {
@@ -83,6 +75,8 @@ h2 {
 }
 
 #main-content {
-  padding-top: 90px;
+  border-top: 90px solid transparent;
 }
+
+
 

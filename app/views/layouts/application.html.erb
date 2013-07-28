@@ -37,17 +37,17 @@
 			</div>
 		</div>
 
-	<% if current_page? new_user_session_path %>
-		<header class="hero-unit main-hero">
-			<div class="container">
-		  		<h1><a href="/">The Replacements</a></h1>
-		  		<p>The best way to run your football pool</p>
-			</div>
-		</header>
-	<% else %>
 
-	<% end %>
+		<% if current_page? new_user_session_path %>
+			<header class="hero-unit main-hero">
+				<div class="container">
+			  		<h1><a href="/">The Replacements</a></h1>
+			  		<p>The best way to run your football pool</p>
+				</div>
+			</header>
+		<% else %>
 
+		<% end %>
 	<div class="container">
 
 
@@ -60,6 +60,7 @@
 							<%= message %>
 					</div>
 				<% end %>
+
 				<%= yield %>
 			</div>
 		</div>

@@ -77,8 +77,8 @@ h2 {
 }
 
 .navbar .nav > li > a {
-  border-right: none;
-  border-left: none;
-  line-height: 40px;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  line-height: 36px;
 }
 

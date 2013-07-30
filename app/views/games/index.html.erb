@@ -1,4 +1,8 @@
-<h1>This Week's Games</h1>
+<% if current_user.admin? %>
+  <h1>All Games</h1>
+<% else %>
+  <h1>This Week's Games</h1>
+<% end %>
 <hr>
 <div class="table-spacing">
   <table class="table-bordered table-striped table-hover">
@@ -11,49 +15,55 @@
 
     </tr>
 
-    <h4>Thursday's games</h4>
-    <% @games.each do |game| %>
-      <% if game.date.beginning_of_week == Date.current.beginning_of_week %>
-        <% if game.date.to_time.wday == 4 %>
-          <%= render 'game_tr', game: game %>
+    <% if current_user.admin? %>
+      <% @games.each do |game| %>
+        <%= render 'game_tr', game: game %>
+      <% end %>
+    <% else %>
+      <h4>Thursday's games</h4>
+      <% @games.each do |game| %>
+        <% if game.date.beginning_of_week == Date.current.beginning_of_week %>
+          <% if game.date.to_time.wday == 4 %>
+            <%= render 'game_tr', game: game %>
+          <% end %>
         <% end %>
       <% end %>
-    <% end %>
-  </table>
+    </table>
 
-  <table class="table-bordered table-striped table-hover">
-    <tr>
-      <th>Date</th>
-      <th>Away Team</th>
-      <th>Home Team</th>
-      <th>Spread</th>
-      <th>Wager</th>
-    </tr>
+    <table class="table-bordered table-striped table-hover">
+      <tr>
+        <th>Date</th>
+        <th>Away Team</th>
+        <th>Home Team</th>
+        <th>Spread</th>
+        <th>Wager</th>
+      </tr>
 
-    <h4>Sunday's games</h4>
-    <% @games.each do |game| %>
-      <% if game.date.beginning_of_week == Date.current.beginning_of_week %>
-        <% if game.date.to_time.wday == 0 %>
-          <%= render 'game_tr', game: game %>
+      <h4>Sunday's games</h4>
+      <% @games.each do |game| %>
+        <% if game.date.beginning_of_week == Date.current.beginning_of_week %>
+          <% if game.date.to_time.wday == 0 %>
+            <%= render 'game_tr', game: game %>
+          <% end %>
         <% end %>
       <% end %>
-    <% end %>
-  </table>
+    </table>
 
-  <table class="table-bordered table-striped table-hover">
-    <tr>
-      <th>Date</th>
-      <th>Away Team</th>
-      <th>Home Team</th>
-      <th>Spread</th>
-      <th>Wager</th>
-    </tr>
+    <table class="table-bordered table-striped table-hover">
+      <tr>
+        <th>Date</th>
+        <th>Away Team</th>
+        <th>Home Team</th>
+        <th>Spread</th>
+        <th>Wager</th>
+      </tr>
 
-    <h4>Monday's games</h4>
-    <% @games.each do |game| %>
-      <% if game.date.beginning_of_week == Date.current.beginning_of_week %>
-        <% if game.date.to_time.wday == 1 %>
-          <%= render 'game_tr', game: game %>
+      <h4>Monday's games</h4>
+      <% @games.each do |game| %>
+        <% if game.date.beginning_of_week == Date.current.beginning_of_week %>
+          <% if game.date.to_time.wday == 1 %>
+            <%= render 'game_tr', game: game %>
+          <% end %>
         <% end %>
       <% end %>
     <% end %>

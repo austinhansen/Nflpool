@@ -6,7 +6,7 @@ class GamesController < ApplicationController
 
 
   def index
-    @games = Game.order(:date)
+    @games = Game.order(:date).page(params[:page]).per(20)
 
     respond_to do |format|
       format.html # index.html.erb

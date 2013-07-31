@@ -19,6 +19,7 @@
       <% @games.each do |game| %>
         <%= render 'game_tr', game: game %>
       <% end %>
+      <%= paginate @games %>
     <% else %>
       <h4>Thursday's games</h4>
       <% @games.each do |game| %>

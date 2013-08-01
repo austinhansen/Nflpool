@@ -14,7 +14,7 @@
 
     <tr>
       <% if current_user.admin? %>
-        <td><%= link_to pick.wager, new_game_pick_path(Pick.find_by(user_id: :user_id).game_id) %></td>
+        <td><%= link_to pick.wager, new_game_pick_path(pick.game_id) %></td>
       <% else %>
         <td><%= pick.wager %></td>
       <% end %>
@@ -27,7 +27,7 @@
   <% elsif (pick.date.beginning_of_week != Date.current.beginning_of_week) %>
       <tr>
         <% if current_user.admin? %>
-          <td><%= link_to pick.wager, new_game_pick_path(pick.game_id) %></td>
+          <td><%= link_to pick.wager, new_game_pick_path(Pick.find_by(user_id: :user_id).game_id) %></td>
         <% else %>
           <td><%= pick.wager %></td>
         <% end %>

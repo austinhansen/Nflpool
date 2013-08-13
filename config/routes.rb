@@ -2,7 +2,7 @@ Nflpool::Application.routes.draw do
 
 
   resources :games do
-    resources :picks
+    resources :picks, only: [:new, :create]
   end
 
   devise_for :users
@@ -11,6 +11,8 @@ Nflpool::Application.routes.draw do
    resources :picks, only: [:index]
   get "leaderboard"
   end
+
+  resources :picks, only: [:edit, :update]
 
   devise_scope :user do
     get 'register', to: 'devise/registrations#new', as: :register

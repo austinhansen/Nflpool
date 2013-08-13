@@ -19,8 +19,9 @@
 
   <td><%= game.spread %></td>
   <td>
-    <% if game.picks.where(user_id: current_user.id).any? %>
-      <%= link_to game.picks.find_by(user_id: current_user.id).wager, new_game_pick_path(game) %>
+    <% pick = game.picks.find_by(user_id: current_user.id) %>
+    <% if pick %>
+      <%= link_to pick.wager, edit_pick_path(pick) %>
     <% else %>
       <%= link_to 'Pick', new_game_pick_path(game) %>
     <% end %>

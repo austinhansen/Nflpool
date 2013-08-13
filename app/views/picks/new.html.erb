@@ -1,5 +1,5 @@
 <h1>Make A Pick</h1>
 
-<%= render 'form' %>
+<%= render 'form', pick_resource: [@game, @pick], game: @game %>
 
 <%= link_to 'Back', games_path %>

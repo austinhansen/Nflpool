@@ -11,23 +11,23 @@
 
 <% User.find(params[:user_id]).picks.each do |pick| %>
   <% if pick.user_id == current_user.id %>
-
     <tr>
       <% if current_user.admin? %>
-        <td><%= link_to pick.wager, new_game_pick_path(pick.game_id) %></td>
+        <td><%= link_to pick.wager, edit_pick_path(pick) %></td>
       <% else %>
         <td><%= pick.wager %></td>
       <% end %>
       <td><%= pick.pick_team.name %></td>
-      <td><%= Game.find_by(id: pick.game_id).date  %></td>
+      <td><%= Game.find_by(id: pick.game_id).date %></td>
       <td><%= Game.find_by(id: pick.game_id).team_two.name %></td>
       <td><%= Game.find_by(id: pick.game_id).team_one.name %></td>
     </tr>
 
-  <% elsif (pick.date.beginning_of_week != Date.current.beginning_of_week) %>
+  <% elsif (pick.created_at.beginning_of_week <= Date.current.beginning_of_week) %>
       <tr>
         <% if current_user.admin? %>
-          <td><%= link_to pick.wager, new_game_pick_path(Pick.find_by(user_id: :user_id).game_id) %></td>
+          <% @game = Game.find_by(id: pick.game_id) %>
+          <td><%= link_to pick.wager, edit_pick_path(pick) %></td>
         <% else %>
           <td><%= pick.wager %></td>
         <% end %>

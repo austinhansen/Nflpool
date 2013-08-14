@@ -7,12 +7,7 @@ class PicksController < ApplicationController
   # GET /picks
   # GET /picks.json
   def index
-    if current_user.admin?
-      @user = User.find(params[:user_id])
-    else
-      @user = current_user
-    end
-
+    @user = User.find(params[:user_id])
     @picks = @user.picks.order("#{:created_at} DESC").page(params[:page]).per(20)
   end
 

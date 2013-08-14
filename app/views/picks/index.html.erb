@@ -11,7 +11,7 @@
 
 
 <% @picks.each do |pick| %>
-  <% if pick.user_id == current_user.id %>
+  <% if pick.user_id == current_user.id || current_user.admin? %>
     <tr>
       <% if current_user.admin? %>
         <td><%= link_to pick.wager, edit_pick_path(pick) %></td>

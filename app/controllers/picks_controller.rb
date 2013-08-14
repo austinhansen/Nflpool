@@ -13,7 +13,7 @@ class PicksController < ApplicationController
       @user = current_user
     end
 
-    @picks = @user.picks
+    @picks = @user.picks.order("#{:created_at} DESC").page(params[:page]).per(20)
   end
 
   # GET /picks/1

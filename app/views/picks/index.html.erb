@@ -9,7 +9,8 @@
     <th>Home Team</th>
   </tr>
 
-<% User.find(params[:user_id]).picks.each do |pick| %>
+
+<% @picks.each do |pick| %>
   <% if pick.user_id == current_user.id %>
     <tr>
       <% if current_user.admin? %>
@@ -36,9 +37,9 @@
         <td><%= Game.find_by(id: pick.game_id).team_two.name %></td>
         <td><%= Game.find_by(id: pick.game_id).team_one.name %></td>
 
-
   <% end %>
 <% end %>
+<%= paginate @picks %>
 </table>
 
 <br />

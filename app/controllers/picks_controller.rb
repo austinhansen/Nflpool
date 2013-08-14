@@ -13,7 +13,7 @@ class PicksController < ApplicationController
       @user = current_user
     end
 
-    @picks = User.find(params[:user_id]).picks
+    @picks = @user.picks
   end
 
   # GET /picks/1

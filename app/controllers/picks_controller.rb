@@ -32,11 +32,6 @@ class PicksController < ApplicationController
   def new
     @game = Game.find params[:game_id]
     @pick = @game.picks.find_or_initialize_by(user_id: current_user.id)
-
-    respond_to do |format|
-      format.html # new.html.erb
-      format.json { render json: @pick }
-    end
   end
 
   # GET /picks/1/edit
@@ -54,7 +49,7 @@ class PicksController < ApplicationController
 
     respond_to do |format|
       if @pick.save
-        format.html { redirect_to :back, notice: 'Pick was successfully created.' }
+        format.html { redirect_to games_path, notice: 'Pick was successfully created.' }
         format.json { render json: @pick, status: :created, location: @pick }
       else
         format.html { render action: "new", id: @pick.id }

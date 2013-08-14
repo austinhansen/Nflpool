@@ -13,7 +13,7 @@ class User < ActiveRecord::Base
   end
 
   def user_points
-    point_tracker = 250
+    point_tracker = 0
     self.picks.each do |pick|
       if pick.wager != nil
         if pick.result

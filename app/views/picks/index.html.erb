@@ -23,7 +23,7 @@
       <td><%= Game.find_by(id: pick.game_id).team_one.name %></td>
     </tr>
 
-  <% elsif (pick.created_at.beginning_of_week <= Date.current.beginning_of_week) %>
+  <% elsif (pick.created_at.to_date.beginning_of_week <= Date.current.beginning_of_week) %>
       <tr>
         <% if current_user.admin? %>
           <% @game = Game.find_by(id: pick.game_id) %>

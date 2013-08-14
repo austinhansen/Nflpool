@@ -12,7 +12,7 @@
 
 
   <div class="form-actions">
-    <% if game.date <= Date.current %>
+    <% if game.date < Date.current %>
 
       <% if current_user.admin? %>
         <%= f.button :submit, class: "btn btn-success" %>

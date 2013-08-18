@@ -15,7 +15,7 @@ RailsAdmin.config do |config|
   config.current_user_method { current_user } # auto-generated
 
   # If you want to track changes on your models:
-  # config.audit_with :history, 'User'
+   config.audit_with :history, 'User'
 
   # Or with a PaperTrail: (you need to install it first)
   # config.audit_with :paper_trail, 'User'
@@ -30,7 +30,7 @@ RailsAdmin.config do |config|
   # config.excluded_models = ['Game', 'Pick', 'Team', 'User']
 
   # Include specific models (exclude the others):
-  # config.included_models = ['Game', 'Pick', 'Team', 'User']
+   config.included_models = ['Game', 'Pick', 'User']
 
   # Label methods for model instances:
   # config.label_methods << :description # Default is [:name, :title]
@@ -60,21 +60,21 @@ RailsAdmin.config do |config|
 
   #   # Found associations:
 
-  #     configure :team_one, :belongs_to_association 
-  #     configure :team_two, :belongs_to_association 
-  #     configure :winning_team, :belongs_to_association 
-  #     configure :picks, :has_many_association 
+  #     configure :team_one, :belongs_to_association
+  #     configure :team_two, :belongs_to_association
+  #     configure :winning_team, :belongs_to_association
+  #     configure :picks, :has_many_association
 
   #   # Found columns:
 
-  #     configure :id, :integer 
-  #     configure :date, :date 
-  #     configure :team_one_id, :integer         # Hidden 
-  #     configure :team_two_id, :integer         # Hidden 
-  #     configure :created_at, :datetime 
-  #     configure :updated_at, :datetime 
-  #     configure :winning_team_id, :integer         # Hidden 
-  #     configure :spread, :string 
+  #     configure :id, :integer
+  #     configure :date, :date
+  #     configure :team_one_id, :integer         # Hidden
+  #     configure :team_two_id, :integer         # Hidden
+  #     configure :created_at, :datetime
+  #     configure :updated_at, :datetime
+  #     configure :winning_team_id, :integer         # Hidden
+  #     configure :spread, :string
 
   #   # Cross-section configuration:
 
@@ -110,20 +110,20 @@ RailsAdmin.config do |config|
 
   #   # Found associations:
 
-  #     configure :user, :belongs_to_association 
-  #     configure :pick_team, :belongs_to_association 
-  #     configure :gameid, :belongs_to_association 
+  #     configure :user, :belongs_to_association
+  #     configure :pick_team, :belongs_to_association
+  #     configure :gameid, :belongs_to_association
 
   #   # Found columns:
 
-  #     configure :id, :integer 
-  #     configure :date, :date 
-  #     configure :user_id, :integer         # Hidden 
-  #     configure :created_at, :datetime 
-  #     configure :updated_at, :datetime 
-  #     configure :pick_team_id, :integer         # Hidden 
-  #     configure :game_id, :integer         # Hidden 
-  #     configure :wager, :integer 
+  #     configure :id, :integer
+  #     configure :date, :date
+  #     configure :user_id, :integer         # Hidden
+  #     configure :created_at, :datetime
+  #     configure :updated_at, :datetime
+  #     configure :pick_team_id, :integer         # Hidden
+  #     configure :game_id, :integer         # Hidden
+  #     configure :wager, :integer
 
   #   # Cross-section configuration:
 
@@ -159,14 +159,14 @@ RailsAdmin.config do |config|
 
   #   # Found associations:
 
-  #     configure :games, :has_many_association 
+  #     configure :games, :has_many_association
 
   #   # Found columns:
 
-  #     configure :id, :integer 
-  #     configure :name, :string 
-  #     configure :created_at, :datetime 
-  #     configure :updated_at, :datetime 
+  #     configure :id, :integer
+  #     configure :name, :string
+  #     configure :created_at, :datetime
+  #     configure :updated_at, :datetime
 
   #   # Cross-section configuration:
 
@@ -202,29 +202,29 @@ RailsAdmin.config do |config|
 
   #   # Found associations:
 
-  #     configure :picks, :has_many_association 
+  #     configure :picks, :has_many_association
 
   #   # Found columns:
 
-  #     configure :id, :integer 
-  #     configure :first_name, :string 
-  #     configure :last_name, :string 
-  #     configure :profile_name, :string 
-  #     configure :email, :string 
-  #     configure :password, :password         # Hidden 
-  #     configure :password_confirmation, :password         # Hidden 
-  #     configure :reset_password_token, :string         # Hidden 
-  #     configure :reset_password_sent_at, :datetime 
-  #     configure :remember_created_at, :datetime 
-  #     configure :sign_in_count, :integer 
-  #     configure :current_sign_in_at, :datetime 
-  #     configure :last_sign_in_at, :datetime 
-  #     configure :current_sign_in_ip, :string 
-  #     configure :last_sign_in_ip, :string 
-  #     configure :created_at, :datetime 
-  #     configure :updated_at, :datetime 
-  #     configure :points, :integer 
-  #     configure :admin, :boolean 
+  #     configure :id, :integer
+  #     configure :first_name, :string
+  #     configure :last_name, :string
+  #     configure :profile_name, :string
+  #     configure :email, :string
+  #     configure :password, :password         # Hidden
+  #     configure :password_confirmation, :password         # Hidden
+  #     configure :reset_password_token, :string         # Hidden
+  #     configure :reset_password_sent_at, :datetime
+  #     configure :remember_created_at, :datetime
+  #     configure :sign_in_count, :integer
+  #     configure :current_sign_in_at, :datetime
+  #     configure :last_sign_in_at, :datetime
+  #     configure :current_sign_in_ip, :string
+  #     configure :last_sign_in_ip, :string
+  #     configure :created_at, :datetime
+  #     configure :updated_at, :datetime
+  #     configure :points, :integer
+  #     configure :admin, :boolean
 
   #   # Cross-section configuration:
 

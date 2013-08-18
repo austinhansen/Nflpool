@@ -23,9 +23,11 @@
 
     <% if current_user.admin? %>
       <hr>
-      <h4>Administrator Tools</h4>
-      <%= f.input :admin, label: "User is an administrator?", :required => false %>
-      <%= link_to "List All Users", users_path %>
+      <div class="centered-text">
+        <h3>Administrator Tools</h3>
+        <h4><%= link_to "Admin Panel", rails_admin_path %></h4>
+        <h4><%= link_to "List All Users", users_path %></h4>
+      </div>
     <% end %>
 
 

@@ -20,6 +20,10 @@ RailsAdmin.config do |config|
   # Or with a PaperTrail: (you need to install it first)
   # config.audit_with :paper_trail, 'User'
 
+  config.authenticate_with do
+    ensure_admin!
+  end
+
   # Display empty fields in show views:
   # config.compact_show_view = false
 

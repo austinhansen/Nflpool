@@ -10,11 +10,7 @@ gem 'rails', '4.0.0'
 gem "devise", "~> 3.0.2"
 gem 'simple_form', :git => 'git://github.com/plataformatec/simple_form.git'
 gem 'kaminari'
-gem 'responders',          github: 'plataformatec/responders'
-gem 'inherited_resources', github: 'josevalim/inherited_resources'
-gem "ransack", "~> 1.0.0"
-gem 'activeadmin',         github: 'gregbell/active_admin', branch: 'rails4'
-gem 'formtastic',          github: 'justinfrench/formtastic'
+gem 'rails_admin'
 
 group :development, :test do
 

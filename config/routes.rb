@@ -1,12 +1,16 @@
 Nflpool::Application.routes.draw do
 
+  devise_for :users
+  devise_scope :user do
+    get 'register', to: 'devise/registrations#new', as: :register
+    get 'login', to: 'devise/sessions#new', as: :login
+    get 'logout', to: 'devise/sessions#destroy', as: :logout
+  end
 
   mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
   resources :games do
     resources :picks, only: [:new, :create]
   end
-
-  devise_for :users
 
   resources :users, only: :index do
    resources :picks, only: [:index]
@@ -14,12 +18,6 @@ Nflpool::Application.routes.draw do
   end
 
   resources :picks, only: [:edit, :update]
-
-  devise_scope :user do
-    get 'register', to: 'devise/registrations#new', as: :register
-    get 'login', to: 'devise/sessions#new', as: :login
-    get 'logout', to: 'devise/sessions#destroy', as: :logout
-  end
 
   root to: 'games#index'
   # The priority is based upon order of creation:

@@ -1,6 +1,7 @@
 Nflpool::Application.routes.draw do
 
 
+  mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
   resources :games do
     resources :picks, only: [:new, :create]
   end

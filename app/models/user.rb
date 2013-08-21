@@ -63,7 +63,7 @@ end
 def last_week_wagers
   wager_tracker = 0
   self.picks.each do |pick|
-    if pick.wager != nil && (pick.game.date.beginning_of_week == 1.week.ago.beginning_of_week)
+    if pick.wager != nil && (pick.game.date.beginning_of_week == 1.week.ago.beginning_of_week.to_date)
         wager_tracker = wager_tracker + pick.wager
     end
   end
@@ -77,7 +77,7 @@ end
 def last_week_points
   points_tracker = 0
   self.picks.each do |pick|
-    if pick.wager != nil && (pick.game.date.beginning_of_week == 1.week.ago.beginning_of_week)
+    if pick.wager != nil && (pick.game.date.beginning_of_week == 1.week.ago.beginning_of_week.to_date)
       if pick.result
         points_tracker = points_tracker + pick.wager
       elsif pick.result == false

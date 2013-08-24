@@ -1,0 +1,44 @@
+<%= simple_form_for(pick_resource, html: {class: "form-horizontal"}) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :pick_team_id, label: false, include_blank: false, collection: [game.team_one, game.team_two], label_method: :name, as: :radio_buttons %>
+    <% if current_user.admin? %>
+      <%= f.input :wager, label: 'Points', collection: 25..900, :include_blank => false %>
+    <% else %>
+      <%= f.input :wager, label: 'Points', collection: 25..300, :include_blank => false %>
+    <% end %>
+  </div>
+
+  <div class="form-actions">
+    <% if game.date.to_time.wday == 0 %>
+      <% if game.date.in_time_zone > 1.day.from_now %>
+        <% if current_user.admin? %>
+          <%= f.button :submit, class: "btn btn-success" %>
+        <% else %>
+          <h3>Picks are now closed for this game</h3>
+        <% end %>
+      <% else %>
+        <%= f.button :submit, class: "btn btn-success" %>
+        <div id="float-right">
+          <h4>Total points wagered this week: <%= @pick.user.weekly_wagers %></h4>
+        </div>
+      <% end %>
+
+    <% elsif game.date.to_time.wday == 1 %>
+
+      <% if game.date.in_time_zone > 2.days.from_now %>
+        <% if current_user.admin? %>
+          <%= f.button :submit, class: "btn btn-success" %>
+        <% else %>
+          <h3>Picks are now closed for this game</h3>
+        <% end %>
+      <% else %>
+        <%= f.button :submit, class: "btn btn-success" %>
+        <div id="float-right">
+          <h4>Total points wagered this week: <%= @pick.user.weekly_wagers %></h4>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+<% end %>

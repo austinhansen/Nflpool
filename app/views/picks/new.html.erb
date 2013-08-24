@@ -1,5 +1,8 @@
 <h1>Make A Pick</h1>
-
-<%= render 'form', pick_resource: [@game, @pick], game: @game %>
+<% if @game.date.to_time.wday == 4 %>
+  <%= render 'form', pick_resource: [@game, @pick], game: @game %>
+<% else %>
+  <%= render 'satsunform', pick_resource: [@game, @pick], game: @game %>
+<% end %>
 
 <%= link_to 'Back', games_path %>

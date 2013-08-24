@@ -1,6 +1,7 @@
 <h1>Editing pick</h1>
-
-<%= render 'form', pick_resource: @pick, game: @game %>
-
-
+<% if @game.date.to_time.wday == 4 %>
+  <%= render 'form', pick_resource: @pick, game: @game %>
+<% else %>
+  <%= render 'satsunform', pick_resource: @pick, game: @game %>
+<% end %>
 <%= link_to 'Back', :back, class: "btn"  %>

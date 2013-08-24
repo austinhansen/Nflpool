@@ -4,6 +4,7 @@
   <%= f.input :team_one_id, label: 'Home Team', :include_blank => false,collection: Team.all, label_method: :name %>
   <%= f.input :winning_team_id, label: 'Winner', collection: Team.all, label_method: :name %>
   <%= f.input :spread %>
+  <%= f.input :bonus, label: 'Thanksgiving Game' %>
   <%= f.input :date %>
   <div class="form-actions">
     <%= f.button :submit, class: "btn btn-success" %>

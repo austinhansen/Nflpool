@@ -5,6 +5,8 @@
     <%= f.input :pick_team_id, label: false, include_blank: false, collection: [game.team_one, game.team_two], label_method: :name, as: :radio_buttons %>
     <% if current_user.admin? %>
       <%= f.input :wager, label: 'Points', collection: 25..900, :include_blank => false %>
+    <% elsif game.bonus == true %>
+      <%= f.input :wager, label: 'Points', collection: 25..400, :include_blank => false %>
     <% else %>
       <%= f.input :wager, label: 'Points', collection: 25..300, :include_blank => false %>
     <% end %>

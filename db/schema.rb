@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130818151315) do
+ActiveRecord::Schema.define(version: 20130824065705) do
 
   create_table "active_admin_comments", force: true do |t|
     t.string   "namespace"
@@ -54,6 +54,7 @@ ActiveRecord::Schema.define(version: 20130818151315) do
     t.datetime "updated_at"
     t.integer  "winning_team_id"
     t.string   "spread"
+    t.boolean  "bonus"
   end
 
   create_table "picks", force: true do |t|

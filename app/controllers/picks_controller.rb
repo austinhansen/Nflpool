@@ -2,7 +2,7 @@ class PicksController < ApplicationController
   before_filter :authenticate_user!
   before_filter :ensure_admin!, except: [:index, :new, :edit, :create, :update]
   before_action :authorize_edit, only: [:edit, :update]
-
+  before_action :pick_cutoff, only: [:new, :create, :edit, :update]
 
   # GET /picks
   # GET /picks.json
@@ -80,7 +80,6 @@ class PicksController < ApplicationController
   end
 
   private
-
     def picks_params
       params.require(:pick).permit(:game_id, :pick_team_id, :user_id, :date, :wager) if params[:pick]
     end
@@ -91,6 +90,24 @@ class PicksController < ApplicationController
           @pick = pick_var
       else
         render nothing: true, status: :forbidden
+      end
     end
-  end
+
+    def pick_cutoff
+      pick_var = Pick.find params[:id] rescue nil
+      if pick_var == nil
+        pick_var = Pick.find params[:game_id]
+      end
+      game_var = pick_var.game
+      if game_var.thursday_game || game_var.monday_game || game_var.sunday_game
+        @pick = pick_var
+      elsif game_var.bonus? && game_var.date > Date.current
+        @pick = pick_var
+      elsif current_user.admin?
+        @pick = pick_var
+      else
+        render '_closed'
+      end
+    end
+
 end

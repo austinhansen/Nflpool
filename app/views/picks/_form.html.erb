@@ -20,7 +20,7 @@
       <% else %>
         <h3>Picks are now closed for this game</h3>
       <% end %>
-    <% elsif game.bonus? && game.date < Date.current %>
+    <% elsif game.bonus? && game.date <= Date.current %>
       <h3>Picks are now closed for this game</h3>
     <% else %>
       <%= f.button :submit, class: "btn btn-success" %>

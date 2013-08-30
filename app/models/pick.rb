@@ -1,10 +1,8 @@
 class Pick < ActiveRecord::Base
-    validates :pick_team_id, presence: { message: 'Please select a team.' }
-
+  validates :pick_team_id, presence: { message: 'Please select a team.' }
 
   belongs_to :pick_team, class_name: "Team", foreign_key: "pick_team_id"
   belongs_to :user
-  belongs_to :gameid, class_name: "Game", foreign_key: "game_id"
   belongs_to :game
 
   def result

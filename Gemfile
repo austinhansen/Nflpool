@@ -11,7 +11,6 @@ gem "devise", "~> 3.0.2"
 gem 'simple_form', :git => 'git://github.com/plataformatec/simple_form.git'
 gem 'kaminari'
 gem 'rails_admin'
-gem 'newrelic_rpm'
 
 group :development, :test do
 

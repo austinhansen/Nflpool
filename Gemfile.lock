@@ -85,7 +85,6 @@ GEM
     minitest (4.7.5)
     multi_json (1.7.9)
     nested_form (0.3.2)
-    newrelic_rpm (3.5.8.72)
     nokogiri (1.6.0)
       mini_portile (~> 0.5.0)
     nokogiri (1.6.0-x86-mingw32)
@@ -177,7 +176,6 @@ DEPENDENCIES
   devise (~> 3.0.2)
   jquery-rails
   kaminari
-  newrelic_rpm
   pg
   rails (= 4.0.0)
   rails_12factor

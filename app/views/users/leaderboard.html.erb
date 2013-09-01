@@ -11,7 +11,7 @@
     <th>Previous Points Earned</th>
   </tr>
 
-<% @users = User.find(:all, order: "points DESC") %>
+<% @users = User.find_all_by_admin(false) %>
 <% user_rank = 1 %>
 <% for user in @users %>
     <tr>

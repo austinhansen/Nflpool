@@ -3,6 +3,8 @@ class User < ActiveRecord::Base
   # :token_authenticatable, :confirmable,
   # :lockable, :timeoutable and :omniauthable
 
+  default_scope order('points DESC')
+
   has_many :picks, order: 'game_id asc'
 
   devise :database_authenticatable, :registerable,

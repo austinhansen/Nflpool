@@ -11,12 +11,13 @@ gem "devise", "~> 3.0.2"
 gem 'simple_form', :git => 'git://github.com/plataformatec/simple_form.git'
 gem 'kaminari'
 gem 'rails_admin'
+gem 'taps'
 
 group :development, :test do
 
 	gem 'better_errors'
 	gem 'binding_of_caller'
-	gem 'sqlite3'
+	gem 'pg'
 end
 
 group :production do

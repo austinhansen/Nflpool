@@ -6,7 +6,11 @@ class GamesController < ApplicationController
 
 
   def index
-    @games = Game.order("#{:date} DESC").page(params[:page]).per(20)
+    if current_user.admin?
+      @games = Game.order("date DESC").page(params[:page]).per(20)
+    else
+      @games = Game.order("date DESC")
+    end
 
     respond_to do |format|
       format.html # index.html.erb

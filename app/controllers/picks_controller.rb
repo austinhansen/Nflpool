@@ -38,9 +38,12 @@ class PicksController < ApplicationController
   # POST /picks.json
   def create
     @game = Game.find params[:game_id]
-    @pick = @game.picks.build(picks_params)
-    @pick.user = current_user
-    @pick.save
+    if @game.picks.find_by(user_id: current_user.id)
+    else
+      @pick = @game.picks.build(picks_params)
+      @pick.user = current_user
+      @pick.save
+    end
 
     respond_to do |format|
       if @pick.save

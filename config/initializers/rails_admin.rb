@@ -34,7 +34,7 @@ RailsAdmin.config do |config|
   # config.excluded_models = ['Game', 'Pick', 'Team', 'User']
 
   # Include specific models (exclude the others):
-   config.included_models = ['Team', 'Pick', 'User']
+   #config.included_models = ['Team', 'Pick', 'User']
 
   # Label methods for model instances:
   # config.label_methods << :description # Default is [:name, :title]
@@ -116,17 +116,13 @@ RailsAdmin.config do |config|
 
       configure :user, :belongs_to_association
       configure :pick_team, :belongs_to_association
-      configure :game_id, :belongs_to_association
+
 
     # Found columns:
 
-      configure :id, :integer
-      configure :date, :date
-      configure :user_id, :integer         # Hidden
       configure :created_at, :datetime
       configure :updated_at, :datetime
-      configure :pick_team_id, :integer         # Hidden
-      configure :game_id, :integer         # Hidden
+
       configure :wager, :integer
 
     # Cross-section configuration:

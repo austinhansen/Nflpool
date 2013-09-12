@@ -18,7 +18,7 @@
       <% else %>
         <td><%= pick.wager %></td>
       <% end %>
-      <td><%= pick.pick_team.name %></td>
+      <td><strong><%= pick.pick_team.name %></strong></td>
       <td><%= Game.find_by(id: pick.game_id).date %></td>
       <td><%= Game.find_by(id: pick.game_id).team_two.name %></td>
       <td><%= Game.find_by(id: pick.game_id).team_one.name %></td>
@@ -32,7 +32,7 @@
         <% else %>
           <td><%= pick.wager %></td>
         <% end %>
-        <td><%= pick.pick_team.name %></td>
+        <td><strong><%= pick.pick_team.name %></strong></td>
         <td><%= Game.find_by(id: pick.game_id).date  %></td>
         <td><%= Game.find_by(id: pick.game_id).team_two.name %></td>
         <td><%= Game.find_by(id: pick.game_id).team_one.name %></td>

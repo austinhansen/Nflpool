@@ -8,7 +8,7 @@ class PicksController < ApplicationController
   # GET /picks.json
   def index
     @user = User.find(params[:user_id])
-    @picks = @user.picks.order("#{:created_at} DESC").page(params[:page]).per(20)
+    @picks = @user.picks.order("created_at DESC").page(params[:page]).per(20)
   end
 
   # GET /picks/1

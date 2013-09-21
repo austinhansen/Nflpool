@@ -5,7 +5,7 @@ class User < ActiveRecord::Base
 
   default_scope order('points DESC')
 
-  has_many :picks, order: 'game_id asc'
+  has_many :picks, dependent: :destroy, order: 'game_id asc'
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable

@@ -38,7 +38,13 @@
         <% else %>
           <td><%= pick.wager %></td>
         <% end %>
-        <td><strong><%= pick.pick_team.name %></strong></td>
+
+        <% if pick.pick_team == Game.find_by(id: pick.game_id).winning_team %>
+          <td><strong><%= pick.pick_team.name %></strong></td>
+        <% else %>
+          <td><%= pick.pick_team.name %></td>
+        <% end %>
+
         <td><%= Game.find_by(id: pick.game_id).date  %></td>
         <td><%= Game.find_by(id: pick.game_id).team_two.name %></td>
         <td><%= Game.find_by(id: pick.game_id).team_one.name %></td>

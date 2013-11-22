@@ -55,6 +55,6 @@ module Nflpool
     config.assets.version = '1.0'
     config.assets.initialize_on_precompile = false
     config.beginning_of_week = :tuesday
-    config.time_zone = 'UTC'
+    config.time_zone = 'Cape Verde Is.'
   end
 end

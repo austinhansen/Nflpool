@@ -1,1 +1,3 @@
-NFLpool: An NFL picks website
+==NFLpool: An NFL picks website
+
+This was my first Rails app. I learned a lot about Ruby and Rails while making it, but the code is less than ideal. I've come a long way since making this app, and the quality of my code has improved substantially. A better example of my current skill would be something more recent, such as (liquorsales)[https://github.com/austinhansen/liquorsales] or even (football_bingo)[https://github.com/austinhansen/football_bingo].

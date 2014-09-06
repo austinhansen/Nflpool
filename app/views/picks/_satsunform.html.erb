@@ -13,8 +13,9 @@
   </div>
 
   <div class="form-actions">
-    <% if game.date.to_time.wday == 0 %>
-      <% if game.date.in_time_zone < 1.day.from_now %>
+    <!-- Sunday game -->
+    <% if game.date.sunday? %>
+      <% if Date.today >= game.date - 1 %>
         <% if current_user.admin? %>
           <%= f.button :submit, class: "btn btn-success" %>
         <% else %>
@@ -26,10 +27,9 @@
           <h4>Total points wagered this week: <%= @pick.user.weekly_wagers %></h4>
         </div>
       <% end %>
-
-    <% elsif game.date.to_time.wday == 1 %>
-
-      <% if game.date.in_time_zone < 2.days.from_now %>
+    <!-- Monday game -->
+    <% elsif game.date.monday? %>
+      <% if Date.today >= game.date - 2 %>
         <% if current_user.admin? %>
           <%= f.button :submit, class: "btn btn-success" %>
         <% else %>
